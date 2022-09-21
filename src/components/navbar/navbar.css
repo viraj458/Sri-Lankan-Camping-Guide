@@ -1,0 +1,49 @@
+.navbar{
+  height: 50px;
+  padding-top: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+  background-color: hsl(130, 75%, 47%);
+  display: flex;
+  justify-content: center;
+}
+
+.navContainer{
+  width: 100%;
+  max-width: 1024px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  display: flex;
+  padding-top: 10px;
+
+}
+.logo>h5{
+  padding-top: 20px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+}
+
+.navButton{
+  margin-left: 20px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+  color: #414141;
+}
+
+.appLogo{
+  object-fit: contain;
+  height: 70px;
+  margin-left: 20px;
+  cursor: pointer;
+  
+}
+
