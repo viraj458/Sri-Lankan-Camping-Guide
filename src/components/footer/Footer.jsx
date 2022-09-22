@@ -7,7 +7,8 @@ const Footer = () => {
       <div className="fLists">
         <div className="fList">
 
-          <h3 >About us</h3>
+        <div className="ftitle"><h3 >About us</h3></div>
+          
           <p>We have all information for camping such </p> 
           <p>camping guide, hotels, locations etc.</p>
           <p>to satisfy your camping experience.</p>
@@ -15,7 +16,9 @@ const Footer = () => {
         </div>
 
         <div className="fList">
-        <h3 >Main menu</h3>
+        
+        <div className="ftitle"><h3 >Main menu</h3></div>
+        
           <ul className="fList">
               <li className="fListItem">Home </li>
               <li className="fListItem">Galery </li>
@@ -24,7 +27,9 @@ const Footer = () => {
             </ul>
         </div>  
         <div className="fList">
-        <h3 >Quick links</h3>
+
+        <div className="ftitle"><h3 >Quick links</h3></div>  
+        
           <ul className="fList">
               <li className="fListItem">Camping sites </li>
               <li className="fListItem">Events</li>
@@ -33,7 +38,9 @@ const Footer = () => {
             </ul>
         </div>
         <div className="fList">
-        <h3 >Contact us</h3>
+
+        <div className="ftitle"><h3 >Contact us</h3></div>  
+        
           <ul className="fList">
               <li className="fListItem">slcampingguide@gmail.com </li>
               <li className="fListItem">+94778691322</li>
