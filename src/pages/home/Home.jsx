@@ -1,6 +1,8 @@
 
+import Features from "../../components/Features/Features";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
+import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
 import Navbar from "../../components/navbar/Navbar";
 import "./home.css";
 
@@ -8,17 +10,15 @@ import "./home.css";
 const Home = () => {
   return (
     <div>
-      <div className="top">
-        <Navbar />
-        <Header/>
-      </div>
-      <div className="middle">
-        <br />
-      </div>
-      <div className="bottom">
+      <Navbar />
+      <Header/>
+      <div className="homeContainer">
+        <h1 className="homeTitle">Features</h1>
+        <Features/>
+        <h1 className="homeTitle">Most Visited Sites</h1>
+        <MostVisitedSites/>
         <Footer/>
-      </div>
-      
+      </div> 
     </div>
   );
 };
