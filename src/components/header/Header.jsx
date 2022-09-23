@@ -1,32 +1,30 @@
-import "./header.css";
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
-
-
+ import "./header.css"; 
+ 
 const Header = ({ type }) => {
-
   return (
     <div className="header">
-      <div
-        className={
-          type === "list" ? "headerContainer listMode" : "headerContainer"
-        }
-      >
+      
+      
         <div className="headerList">
           <div className="headerListItem">
-            <span>Home</span>
+           
+            <span><b>Home</b></span>
           </div>
           <div className="headerListItem">
-            <span>Galary</span>
+            
+            <span><b>Gallery</b></span>
           </div>
           <div className="headerListItem">
-            <span>Contact us</span>
+            
+            <span><b>Contact US</b></span>
           </div>
           <div className="headerListItem">
-            <span>Help</span>
+            
+            <span><b>Help</b></span>
           </div>
           
-        </div>
+        
+        
       </div>
     </div>
   );
