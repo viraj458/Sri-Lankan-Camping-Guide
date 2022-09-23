@@ -9,21 +9,24 @@ import pic2 from "./pic2.png";
 function Banner(){
   
   const images = [
-     <img src={pic1} className="pic1" alt="pic2"  /> ,
-     <img src={pic2} className="pic2" alt="pic2"  /> ,
+    { url: pic1 },
+    { url: pic2 },
     
   ];
   
 
    return(
     <div className="banner">
-        <SimpleImageSlider
-        width={1519}
-        height={400}
+      <div className="slider">
+      <SimpleImageSlider
+        width={"100%"}
+        height={"75vh"}
         images={images}
         showBullets={true}
         showNavs={true}
       />
+      </div>
+        
         </div>
    ); 
 }
