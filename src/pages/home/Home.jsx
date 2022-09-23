@@ -1,9 +1,9 @@
-
 import Features from "../../components/Features/Features";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
 import Navbar from "../../components/navbar/Navbar";
+import Banner from "../../components/Banner/Banner";
 import "./home.css";
 
 
@@ -12,6 +12,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Header/>
+      <Banner/>
       <div className="homeContainer">
         <h1 className="homeTitle">Features</h1>
         <Features/>
