@@ -8,7 +8,8 @@ import Campsite from "./pages/campsite/Campsite";
 import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import Event from "./pages/event/Event";
-import RegistrationForm from "./pages/registration/RegistrationForm"
+import Event_upcoming from "./pages/event_upcoming/event_upcoming";
+import RegistrationForm from "./pages/registration/RegistrationForm";
 
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
         <Route path="/campsites/:id" element={<Campsite/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/event" element={<Event/>}/>
+        <Route path="/event_upcoming" element={<Event_upcoming/>}/>
+        
         <Route path="/registration" element={<RegistrationForm/>}/>
       </Routes>
     </BrowserRouter>

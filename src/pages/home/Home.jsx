@@ -1,4 +1,4 @@
-import Features from "../../components/Features/Features";
+import Features from "../../components/Features_home/Features";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
 import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
