@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from "react";
-import "./registrationForm.css";
-import FormInput from "../../components/formInput/FormInput";
+import "./ownerRegistrationForm.css";
+import FormInput from "../../../components/formInput/FormInput";
 
 
 const RegistrationForm = () => {
@@ -113,7 +113,9 @@ const RegistrationForm = () => {
       };
     
       return (
-        <div className="app">
+        <div className='regPage'>
+
+          <div className="fullForm">
           <form className="regForm" onSubmit={handleSubmit}>
             <h1>Registration</h1>
             {inputs.map((input) => (
@@ -127,6 +129,9 @@ const RegistrationForm = () => {
             <button>Next</button>
           </form>
         </div>
+
+        </div>
+        
       );
 }
 
