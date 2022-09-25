@@ -14,8 +14,11 @@ const Event = () => {
         <Header />
         <Banner />
         <div className="eventContainer">
-          <div className="eventcontent">
-        <h1 className="eventTitle">Event Categories</h1>
+        <div className="eventcontent">
+        <div className="ETitle">  
+        <h4 className="eventTitle">Event Categories</h4>
+        <button className="createBtn"><b>Create Events</b></button>
+        </div>
           <Featured />
           </div>
           <Footer />
