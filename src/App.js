@@ -9,6 +9,7 @@ import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import Event from "./pages/event/Event";
 import Event_upcoming from "./pages/event_upcoming/event_upcoming";
+import Event_past from "./pages/event_past/event_past";
 import RegistrationForm from "./pages/registration/RegistrationForm";
 
 
@@ -22,7 +23,7 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/event_upcoming" element={<Event_upcoming/>}/>
-        
+        <Route path="/event_past" element={<Event_past/>}/>
         <Route path="/registration" element={<RegistrationForm/>}/>
       </Routes>
     </BrowserRouter>
