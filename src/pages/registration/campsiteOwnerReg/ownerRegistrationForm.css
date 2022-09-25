@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     justify-content:center;
-    margin-top: 100px;
     background: linear-gradient(
         rgba(255, 255, 255, 0.7),
         rgba(255, 255, 255, 0.3)

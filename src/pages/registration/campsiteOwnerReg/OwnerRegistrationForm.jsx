@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import "./ownerRegistrationForm.css";
 import FormInput from "../../../components/formInput/FormInput";
+import NavLogo from '../../../components/navLogo/NavLogo';
 
 
 const RegistrationForm = () => {
@@ -114,7 +115,7 @@ const RegistrationForm = () => {
     
       return (
         <div className='regPage'>
-
+          <NavLogo/>
           <div className="fullForm">
           <form className="regForm" onSubmit={handleSubmit}>
             <h1>Registration</h1>
