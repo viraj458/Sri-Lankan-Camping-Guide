@@ -10,16 +10,17 @@ import "./home.css";
 const Home = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar/>
       <Header/>
       <Banner/>
       <div className="homeContainer">
         <h1 className="homeTitle">Features</h1>
         <Features/>
         <h1 className="homeTitle">Most Visited Sites</h1>
-        <MostVisitedSites/>
+        <MostVisitedSites/> 
         <Footer/>
       </div> 
+      
     </div>
   );
 };
