@@ -10,10 +10,12 @@ import Login from "./pages/login/Login";
 import Event from "./pages/event/Event";
 import OwnerRegistrationForm from "./pages/registration/campsiteOwnerReg/OwnerRegistrationForm"
 import RoleSelector from "./pages/roleSelector/RoleSelector";
-import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistration";
-import Event_upcoming from "./pages/event_upcoming/event_upcoming";
-import Event_past from "./pages/event_past/event_past";
+import Eventupcoming from "./pages/eventupcoming/Eventupcoming";
+import Eventpast from "./pages/eventpast/Eventpast";
 import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRegistration";
+import EventID from "./pages/eventid/EventID";
+
+
 
 
 function App() {
@@ -26,14 +28,12 @@ function App() {
         <Route path="/login" element={<Login/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/registration" element={<OwnerRegistrationForm/>}/>
-        <Route path="/roleselector" element={<RoleSelector/>}/>
-        <Route path="/campsiteregistration" element={<CampsiteRegistration/>}/>
+        <Route path="/roleselector" element={<RoleSelector/>}/> 
         <Route path="/list" element={<List/>}/>
-        <Route path="/event_upcoming" element={<Event_upcoming/>}/>
-        <Route path="/event_past" element={<Event_past/>}/>
+        <Route path="/event_upcoming" element={<Eventupcoming/>}/>
+        <Route path="/event_past" element={<Eventpast/>}/>
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
-        
-        
+        <Route path="/event_ID" element={<EventID/>}/>
       </Routes>
     </BrowserRouter>
   );
