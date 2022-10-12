@@ -3,18 +3,18 @@ import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
 import "./event_ID.css";
-import Feature_eventID from "../../components/feacture_EventID/feacture_EventID";
+import FeatureeventID from "../../components/feactureEventID/feactureEventID";
 
 
 
-const Event_ID = () => {
+const EventID = () => {
   return (
     <div>
       <Navbar />
       <Header/>
       <Banner/>
       <div className="IDContainer">
-        <Feature_eventID/>
+        <FeatureeventID/>
         
            
         <Footer/>
@@ -23,4 +23,4 @@ const Event_ID = () => {
   );
 };
 
-export default Event_ID;
+export default EventID;

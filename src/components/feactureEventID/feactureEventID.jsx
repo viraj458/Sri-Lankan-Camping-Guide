@@ -1,7 +1,7 @@
 import "./feacture_EventID.css";
 import beach from "./beach.png";
 
-const Feature_eventID = () => {
+const FeatureeventID = () => {
   return (
     
     <div className="Feacture_ID">
@@ -45,4 +45,4 @@ const Feature_eventID = () => {
   );
 };
 
-export default Feature_eventID;
+export default FeatureeventID;
