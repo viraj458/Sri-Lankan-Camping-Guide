@@ -14,6 +14,8 @@ import Eventupcoming from "./pages/eventupcoming/Eventupcoming";
 import Eventpast from "./pages/eventpast/Eventpast";
 import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRegistration";
 import EventID from "./pages/eventid/EventID";
+import CreateEvent from "./pages/EventCreate/CreateEvent";
+
 
 
 
@@ -34,6 +36,8 @@ function App() {
         <Route path="/event_past" element={<Eventpast/>}/>
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
         <Route path="/event_ID" element={<EventID/>}/>
+        <Route path="/CreateEvent" element={<CreateEvent/>}/>
+       
       </Routes>
     </BrowserRouter>
   );
