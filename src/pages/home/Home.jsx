@@ -4,12 +4,14 @@ import Header from "../../components/header/Header";
 import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
+
 import "./home.css";
 
 
 const Home = () => {
   return (
     <div>
+      
       <Navbar/>
       <Header/>
       <Banner/>
