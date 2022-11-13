@@ -14,7 +14,7 @@
 
 
 
-label{
+.EventformInput>label{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     margin-top: 15px;
@@ -22,7 +22,7 @@ label{
     color: rgb(48, 48, 48);
 }
 
-span{
+.EventformInput>span{
     font-size: 12px;
     padding: 3px;
     color: red;
