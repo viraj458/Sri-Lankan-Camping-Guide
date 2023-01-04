@@ -1,22 +1,22 @@
-import './CamperLogin.css'
+import './CampsiteLogin.css'
 import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
 
-const CamperLogin = () => {
+const CampsiteLogin = () => {
   const [values, setValues] = useState({
-    email:"",
+    business_registration_number:"",
     password:"",
   });
   const inputs =[
     {
       id: 1,
-      name: "email",
-      type: "email",
-      placeholder: "Email",
-      errorMessage: "Provide valid email address!",
+      name: "business registration number",
+      type: "text",
+      placeholder: "Business registration number",
+      errorMessage: "Provide valid business registration number!",
       unique: true,
-      label: "Email",
+      label: "Business registration number",
       required: true,
  }
  ,
@@ -44,7 +44,7 @@ const CamperLogin = () => {
     <NavLogo/>
       <div className="fullForm">
       <form className="regForm" onSubmit={handleSubmit}>
-          <h1>Camper Login</h1>
+          <h1>Campsite Login</h1>
           {inputs.map((input) => (
             <FormInput
               key={input.id}
@@ -53,11 +53,11 @@ const CamperLogin = () => {
               onChange={onChange}
             />
           ))}
-          <button className='mybutton'>Sign In</button>
+          <button className='mybutton'>Login</button>
         </form>
       </div>
   </div>
   )
 }
 
-export default CamperLogin
+export default CampsiteLogin
