@@ -6,9 +6,8 @@ import {
 import Home from "./pages/home/Home";
 import Campsite from "./pages/campsite/Campsite";
 import List from "./pages/list/List";
-import Login from "./pages/login/Login";
+import CamperLogin from "./pages/login/camperLogin/CamperLogin";
 import Event from "./pages/event/Event";
-import OwnerRegistrationForm from "./pages/registration/campsiteOwnerReg/OwnerRegistrationForm"
 import RoleSelector from "./pages/roleSelector/RoleSelector";
 import Eventupcoming from "./pages/eventupcoming/Eventupcoming";
 import Eventpast from "./pages/eventpast/Eventpast";
@@ -28,9 +27,8 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/campsites" element={<List/>}/>
         <Route path="/campsites/:id" element={<Campsite/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/camper_login" element={<CamperLogin/>}/>
         <Route path="/event" element={<Event/>}/>
-        {/* <Route path="/registration" element={<OwnerRegistrationForm/>}/> */}
         <Route path="/roleselector" element={<RoleSelector/>}/> 
         <Route path="/list" element={<List/>}/>
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
