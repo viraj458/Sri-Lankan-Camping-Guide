@@ -15,6 +15,7 @@ import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRe
 import EventID from "./pages/eventid/EventID";
 import CreateEvent from "./pages/EventCreate/CreateEvent";
 import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistration";
+import CampsiteLogin from "./pages/login/campsiteLogin/CampsiteLogin";
 
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/campsites" element={<List/>}/>
         <Route path="/campsites/:id" element={<Campsite/>}/>
         <Route path="/camper_login" element={<CamperLogin/>}/>
+        <Route path="/campsite_login" element={<CampsiteLogin/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/roleselector" element={<RoleSelector/>}/> 
         <Route path="/list" element={<List/>}/>
