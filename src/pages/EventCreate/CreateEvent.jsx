@@ -115,7 +115,8 @@ const CreateEvent = () => {
 
         <label><br/><br/>Description<br/></label>
         <textarea > </textarea>
-       
+        
+        <h4>Add Photos or drag and drop</h4>
         <DragDrop/>
         <button className='eventbutton'>Request</button>
       </form>

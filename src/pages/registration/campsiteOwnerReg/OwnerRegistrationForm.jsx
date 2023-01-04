@@ -47,7 +47,7 @@ const RegistrationForm = () => {
           type: "text",
           placeholder: "Address",
           errorMessage:
-            "Please enter address!",
+            "Enter address!",
           label: "Address",
           required: true,
         },
@@ -57,7 +57,7 @@ const RegistrationForm = () => {
           type: "text",
           placeholder: "NIC",
           errorMessage:
-            "NIC should be 3-16 characters and shouldn't include any special character!",
+            "Enter valid NIC",
           label: "NIC",
           pattern: "^[A-Za-z0-9]{3,16}$",
           required: true,
@@ -68,7 +68,7 @@ const RegistrationForm = () => {
           type: "text",
           placeholder: "Phone Number",
           errorMessage:
-            "Address should be 3-16 characters and shouldn't include any special character!",
+            "Enter phone number",
           label: "Phone Number",
           pattern: "^[A-Za-z0-9]{3,16}$",
           required: true,
@@ -78,7 +78,7 @@ const RegistrationForm = () => {
           name: "email",
           type: "email",
           placeholder: "Email",
-          errorMessage: "It should be a valid email address!",
+          errorMessage: "Enter valid email address!",
           label: "Email",
           required: true,
         },
