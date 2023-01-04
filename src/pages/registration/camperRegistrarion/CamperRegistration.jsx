@@ -24,18 +24,8 @@ const CamperRegistration = () => {
         label: "Name",
         required: true,
    },
-   {
-    id: 1,
-      name: "username",
-      type: "text",
-      placeholder: "Username",
-      errorMessage:
-        "Provide a unique username",
-      label: "Username",
-      unique: true,
-      required: true,
- }
-   ,
+  
+   
    {
     id: 2,
       name: "username",
@@ -70,16 +60,7 @@ const CamperRegistration = () => {
         pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
         required: true,
    },
-   {
-    id: 5,
-    name: "confirmPassword",
-    type: "password",
-    placeholder: "Confirm Password",
-    errorMessage: "Passwords don't match!",
-    label: "Confirm Password",
-    pattern: values.password,
-    required: true,
-  },
+  
   ];
 
  
