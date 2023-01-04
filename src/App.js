@@ -15,6 +15,7 @@ import Eventpast from "./pages/eventpast/Eventpast";
 import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRegistration";
 import EventID from "./pages/eventid/EventID";
 import CreateEvent from "./pages/EventCreate/CreateEvent";
+import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistration";
 
 
 
@@ -29,7 +30,7 @@ function App() {
         <Route path="/campsites/:id" element={<Campsite/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/event" element={<Event/>}/>
-        <Route path="/registration" element={<OwnerRegistrationForm/>}/>
+        {/* <Route path="/registration" element={<OwnerRegistrationForm/>}/> */}
         <Route path="/roleselector" element={<RoleSelector/>}/> 
         <Route path="/list" element={<List/>}/>
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
@@ -37,6 +38,7 @@ function App() {
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
         <Route path="/event_ID" element={<EventID/>}/>
         <Route path="/CreateEvent" element={<CreateEvent/>}/>
+        <Route path="/campsite_registration" element={<CampsiteRegistration/>}/>
        
       </Routes>
     </BrowserRouter>
