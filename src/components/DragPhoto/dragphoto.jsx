@@ -10,7 +10,7 @@ function DragDrop() {
     setFile(file);
   };
   return (
-    <><h4>Add Photos or drag and drop</h4>
+    <>
     <FileUploader
           multiple={true}
           handleChange={handleChange}
