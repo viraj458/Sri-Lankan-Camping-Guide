@@ -91,9 +91,10 @@ const CreateEvent = () => {
   };
 
   return (
-    <div><NavLogo/>
-    <div className="eform">   
-      <form onSubmit={handleSubmit}>
+    <div className="eventcreatepage"><NavLogo/>
+    <div className="eventfullform">
+         
+      <form className="eventform" onSubmit={handleSubmit}>
         <h1>Create Event</h1>
         {inputs.map((input) => (
           <EventFormInput
@@ -117,7 +118,7 @@ const CreateEvent = () => {
         
         <h4>Add Photos or drag and drop</h4>
         <DragDrop/>
-        <button>Request</button>
+        <button className='eventbutton'>Request</button>
       </form>
     </div>
     </div>

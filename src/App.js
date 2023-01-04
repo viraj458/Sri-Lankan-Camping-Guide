@@ -36,7 +36,7 @@ function App() {
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
         <Route path="/event_past" element={<Eventpast/>}/>
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
-        <Route path="/event_ID" element={<EventID/>}/>
+        <Route path="/event/:id" element={<EventID/>}/>
         <Route path="/CreateEvent" element={<CreateEvent/>}/>
         <Route path="/campsite_registration" element={<CampsiteRegistration/>}/>
        
@@ -46,3 +46,4 @@ function App() {
 }
 
 export default App;
+

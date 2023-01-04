@@ -3,12 +3,14 @@ import { useState } from 'react'
 import FormInput from '../../../components/formInput/FormInput'
 import NavLogo from '../../../components/navLogo/NavLogo'
 
+
 const CamperRegistration = () => {
   const [values, setValues] = useState({
       name: "",
       username:"",
       email:"",
       password:"",
+      confirmpassword:""
     });
 
   const inputs =[
@@ -22,20 +24,22 @@ const CamperRegistration = () => {
         label: "Name",
         required: true,
    },
+  
+   
    {
-    id: 1,
+    id: 2,
       name: "username",
       type: "text",
-      placeholder: "Username",
+      placeholder: "UserName",
       errorMessage:
-        "Provide a unique username",
-      label: "Username",
-      unique: true,
+        "Name should be 3-16 characters and shouldn't include any special character!",
+      label: "UserName",
+      pattern: "^[A-Za-z0-9]{3,16}$",
       required: true,
  }
-   ,
+ ,
    {
-        id: 2,
+        id: 3,
         name: "email",
         type: "email",
         placeholder: "Email",
@@ -46,7 +50,7 @@ const CamperRegistration = () => {
    }
    ,
    {
-        id: 3,
+        id: 4,
         name: "password",
         type: "password",
         placeholder: "Password",
@@ -56,25 +60,41 @@ const CamperRegistration = () => {
         pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
         required: true,
    },
-  //  {
-  //   id: 5,
-  //   name: "confirmPassword",
-  //   type: "password",
-  //   placeholder: "Confirm Password",
-  //   errorMessage: "Passwords don't match!",
-  //   label: "Confirm Password",
-  //   pattern: values.password,
-  //   required: true,
-  // }
+  
   ];
+
+ 
 
   const handleSubmit = (e) => {
       e.preventDefault();
+      
     };
   
     const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
-    };
+      fetch("http://localhost:5000/api/v1/register",{
+        method:"POST",
+        crossDomain:true,
+        header:{
+          "Content-type":"Application/json",
+          Accept:"Application/json"
+        },
+     
+        body:JSON.stringify({
+          name,
+          username,
+          email,
+          password
+        }
+        )
+          
+      }).then((res)=>res.json())
+      .then((data)=>{
+        console.log(data,"userRegister");
+      }).catch((err)=>{
+        console.error(err);
+      })
+    }
 
 return (
   <div className='regPage'>
