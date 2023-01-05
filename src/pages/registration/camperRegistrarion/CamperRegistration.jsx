@@ -63,21 +63,42 @@ const CamperRegistration = () => {
   
   ];
 
+  
  
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      
-    };
+  
   
     const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
-      
+      fetch("http://localhost:5000/api/v1/register",{
+        method:"POST",
+        crossDomain:true,
+        header:{
+          "Content-type":"Application/json",
+          Accept:"Application/json"
+        },
+     
+        body:JSON.stringify({
+          name,
+          username,
+          email,
+          password
+        }
+        )
+          
+      }).then((res)=>res.json())
+      .then((data)=>{
+        console.log(data,"userRegister");
+      }).catch((err)=>{
+        console.error(err);
+      })
+    }
+
 return (
   <div className='regPage'>
     <NavLogo/>
       <div className="fullForm">
-      <form className="regForm" onSubmit={handleSubmit}>
+      <form method = "POST" className="regForm" >
           <h1>Camper Registration</h1>
           {inputs.map((input) => (
             <FormInput
@@ -87,7 +108,7 @@ return (
               onChange={onChange}
             />
           ))}
-          <button className='mybutton'>Sign Up</button>
+          <button className='mybutton' onClick={handleSubmit}>Sign Up</button>
         </form>
       </div>
   </div>
