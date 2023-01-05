@@ -9,6 +9,7 @@ import List from "./pages/list/List";
 import CamperLogin from "./pages/login/camperLogin/CamperLogin";
 import Event from "./pages/event/Event";
 import RoleSelector from "./pages/roleSelector/RoleSelector";
+import RoleSelectorReg from "./pages/roleSelectorReg/RoleSelectorReg";
 import Eventupcoming from "./pages/eventupcoming/Eventupcoming";
 import Eventpast from "./pages/eventpast/Eventpast";
 import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRegistration";
@@ -33,6 +34,7 @@ function App() {
         <Route path="/campsite_login" element={<CampsiteLogin/>}/>
         <Route path="/event" element={<Event/>}/>
         <Route path="/roleselector" element={<RoleSelector/>}/> 
+        <Route path="/roleselectorReg" element={<RoleSelectorReg/>}/>
         <Route path="/list" element={<List/>}/>
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
         <Route path="/event_past" element={<Eventpast/>}/>
