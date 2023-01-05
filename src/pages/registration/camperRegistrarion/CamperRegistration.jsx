@@ -63,21 +63,28 @@ const CamperRegistration = () => {
   
   ];
 
+  
  
 
-  const handleSubmit = (e) => {
-      e.preventDefault();
-      
-    };
+  
   
     const onChange = (e) => {
-      setValues({ ...values, [e.target.name]: e.target.value });
-      fetch("http://localhost:5000/api/v1/register",{
+      console.log(e);
+      let name = e.target.name;
+      let value = e.target.value;
+      setValues({ ...values, [name]:value});
+      
+    }
+
+    const handleSubmit = async(e) => {
+      e.preventDefault();
+
+      const { name, username, email, password } = values
+
+        const res = await fetch("http://localhost:5000/api/v1/register",{
         method:"POST",
-        crossDomain:true,
-        header:{
-          "Content-type":"Application/json",
-          Accept:"Application/json"
+        // crossDomain:true,
+        headers:{"Content-Type":"application/json"
         },
      
         body:JSON.stringify({
@@ -88,19 +95,23 @@ const CamperRegistration = () => {
         }
         )
           
-      }).then((res)=>res.json())
-      .then((data)=>{
-        console.log(data,"userRegister");
-      }).catch((err)=>{
-        console.error(err);
       })
-    }
+      const data = await res.json()
+
+      if(data.status === 422 || !data){
+        console.log('invalid registration');
+      }else{
+        console.log('Successfull')
+        console.log(data);
+
+      }
+    };
 
 return (
   <div className='regPage'>
     <NavLogo/>
       <div className="fullForm">
-      <form className="regForm" onSubmit={handleSubmit}>
+      <form method = "POST" className="regForm" >
           <h1>Camper Registration</h1>
           {inputs.map((input) => (
             <FormInput
@@ -110,7 +121,7 @@ return (
               onChange={onChange}
             />
           ))}
-          <button className='mybutton'>Sign Up</button>
+          <button className='mybutton' onClick={handleSubmit}>Sign Up</button>
         </form>
       </div>
   </div>
