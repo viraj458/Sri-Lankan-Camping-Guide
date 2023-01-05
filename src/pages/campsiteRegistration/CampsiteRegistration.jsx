@@ -4,6 +4,7 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
+import {Link } from "react-router-dom"; 
 
 const CampsiteRegistration = () => {
     const [values, setValues] = useState({
@@ -155,13 +156,14 @@ const CampsiteRegistration = () => {
                 {...input}
                 value={values[input.name]}
                 onChange={onChange}
+                onClick={handleSubmit}
               />
             ))}
             <h4>Photos of campsite</h4>
             <DragDrop />
             <h4>Photos of legal documents</h4>
             <DragDrop />
-            <button className='mybutton' onClick={handleSubmit}>Register</button>
+            <button className='mybutton' >Register</button>
           </form>
         </div>
     </div>

@@ -3,12 +3,13 @@ import site1 from "./site1.jpg"
 import site2 from "./site2.jpg"
 import site3 from "./site3.jpg"
 import site4 from "./site4.jpg"
+import {Link } from "react-router-dom"; 
 
 const MostVisitedSites = () => {
   return (
     <div className="cList">
       <div className="cListItem">
-        <img src={site1} alt="" className="cListImg"/>
+      <Link to="/campsites/:id"><img src={site1} alt="" className="cListImg"/></Link>
         <div className="cListTitles">
         <h1>Demo Campsite</h1>
       </div>

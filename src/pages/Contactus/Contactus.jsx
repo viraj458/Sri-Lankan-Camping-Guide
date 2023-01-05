@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Contactus.css";
 import NavLogo from "../../components/navLogo/NavLogo";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
+import {Link } from "react-router-dom"; 
 
 
 
@@ -92,7 +93,7 @@ const Contactus = () => {
         <textarea > </textarea>
         
         
-        <button className='contactbutton'>Send</button>
+        <Link to="/"> <button className='contactbutton'>Send</button></Link>
       </form>
     </div>
    

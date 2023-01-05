@@ -82,9 +82,10 @@ const CampsiteLogin = () => {
               {...input}
               value={values[input.name]}
               onChange={onChange}
+              onClick={handleSubmit}
             />
           ))}
-          <button className='mybutton' onClick={handleSubmit}>Login</button>
+          <button className='mybutton' >Login</button>
         </form>
       </div>
   </div>
