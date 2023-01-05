@@ -114,5 +114,5 @@ return (
   </div>
 )
 }
-}
+
 export default CamperRegistration;
