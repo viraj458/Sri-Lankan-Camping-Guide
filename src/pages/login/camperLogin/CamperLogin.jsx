@@ -32,18 +32,50 @@ const CamperLogin = () => {
       required: true,
  }
   ];
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+
+      const onChange = (e) => {
+      console.log(e);
+      let name = e.target.name;
+      let value = e.target.value;
+      setValues({ ...values, [name]:value});
+      
+    }
+
+    const handleSubmit = async(e) => {
+      e.preventDefault();
+
+      const { email, password } = values
+
+        const res = await fetch("http://localhost:5000/api/v1/login",{
+        method:"POST",
+        // crossDomain:true,
+        headers:{"Content-Type":"application/json"
+        },
+     
+        body:JSON.stringify({
+          
+          email,
+          password
+        }
+        )
+          
+      })
+      const data = await res.json()
+
+      if(data.status === 422 || !data){
+        console.log('invalid login');
+      }else{
+        console.log('Successfull')
+        console.log(data);
+
+      }
+    };
   return (
     <div className='regPage'>
     <NavLogo/>
       <div className="fullForm">
-      <form className="regForm" onSubmit={handleSubmit}>
+      <form method='POST' className="regForm" >
           <h1>Camper Login</h1>
           {inputs.map((input) => (
             <FormInput
@@ -53,7 +85,7 @@ const CamperLogin = () => {
               onChange={onChange}
             />
           ))}
-          <button className='mybutton'>Sign In</button>
+          <button className='mybutton'onClick={handleSubmit}>Sign In</button>
         </form>
       </div>
   </div>

@@ -7,14 +7,14 @@ import DragDrop from "../../components/DragPhoto/dragphoto";
 
 const CampsiteRegistration = () => {
     const [values, setValues] = useState({
-        campsite_name: "",
-        location_address:"",
-        business_registration_number:"",
-        description:"",
-        phone_number:"",
-        password:"",
-        photos_of_location:"",
-        photos_of_legal_docs:"",
+      campsite_name: "",
+      location_address:"",
+      business_registration_number:"",
+      description:"",
+      phone_number:"",
+      password:"",
+      photos_of_location:"",
+      photos_of_legal_docs:""
 
 
       });
@@ -22,19 +22,18 @@ const CampsiteRegistration = () => {
     const inputs =[
      {
         id: 1,
-          name: "campsitename",
+          name: "campsite_name",
           type: "text",
           placeholder: "Campsite Name",
           errorMessage:
             "Campsite name should be 3-16 characters and shouldn't include any special character!",
           label: "Campsite Name",
-          pattern: "^[A-Za-z0-9]{3,16}$",
           required: true,
      }
      ,
      {
         id: 2,
-          name: "locationaddress",
+          name: "location_address",
           type: "text",
           placeholder: "Location Address",
           errorMessage:
@@ -65,7 +64,7 @@ const CampsiteRegistration = () => {
      },
      {
       id: 5,
-      name: "phonenumber",
+      name: "phone_number",
       type: "text",
       placeholder: "Phone Number",
       errorMessage:
@@ -87,19 +86,68 @@ const CampsiteRegistration = () => {
     ];
     
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-      };
-    
-      const onChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.value });
-      };
+    const onChange = (e) => {
+      console.log(e);
+      let name = e.target.name;
+      let value = e.target.value;
+      setValues({ ...values, [name]:value});
+      
+    }
+
+    const handleSubmit = async(e) => {
+      e.preventDefault();
+
+      const { 
+        campsite_name,
+        location_address,
+        business_registration_number,
+        description,
+        phone_number,
+        password} = values
+
+
+        
+        const res = await fetch("http://localhost:5000/api/v1/register_campsite",{
+        method:"POST",
+        // crossDomain:true,
+        headers:{"Content-Type":"application/json"
+        },
+     
+        body:JSON.stringify({ 
+        campsite_name,
+        location_address,
+        business_registration_number,
+        description,
+        phone_number,
+        password} 
+        )
+          
+      })
+      const data = await res.json()
+      // console.log('====================================');
+      // console.log({
+      //   campsite_name,
+      //   location_address,
+      //   business_registration_number,
+      //   description,
+      //   phone_number,
+      //   password } );
+      // console.log('====================================');
+  
+      if(data.status === 422 || !data){
+        console.log('invalid registration');
+      }else{
+        console.log('Successfull')
+        console.log(data);
+
+      }
+    };
 
   return (
     <div className='regPage'>
       <NavLogo/>
         <div className="fullForm">
-        <form className="regForm" onSubmit={handleSubmit}>
+        <form method='POST' className="regForm" >
             <h1>Campsite Registration</h1>
             {inputs.map((input) => (
               <FormInput
@@ -113,7 +161,7 @@ const CampsiteRegistration = () => {
             <DragDrop />
             <h4>Photos of legal documents</h4>
             <DragDrop />
-            <button className='mybutton'>Register</button>
+            <button className='mybutton' onClick={handleSubmit}>Register</button>
           </form>
         </div>
     </div>
