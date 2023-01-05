@@ -10,7 +10,7 @@ const CamperRegistration = () => {
       username:"",
       email:"",
       password:"",
-      confirmpassword:""
+     
     });
 
   const inputs =[
@@ -67,33 +67,59 @@ const CamperRegistration = () => {
  
 
   
-  
-    const onChange = (e) => {
-      setValues({ ...values, [e.target.name]: e.target.value });
-      fetch("http://localhost:5000/api/v1/register",{
-        method:"POST",
-        crossDomain:true,
-        header:{
-          "Content-type":"Application/json",
-          Accept:"Application/json"
-        },
-     
-        body:JSON.stringify({
-          name,
-          username,
-          email,
-          password
-        }
-        )
-          
-      }).then((res)=>res.json())
-      .then((data)=>{
-        console.log(data,"userRegister");
-      }).catch((err)=>{
-        console.error(err);
-      })
-    }
+  const onChange = (e) => {
+    console.log(e);
+    let name = e.target.name;
+    let value = e.target.value;
+    setValues({ ...values, [name]:value});
+    
+  }
 
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+
+    const { 
+      name,
+      username,
+      email,
+      password,
+      } = values
+
+
+      
+      const res = await fetch("http://localhost:5000/api/v1/register",{
+      method:"POST",
+      // crossDomain:true,
+      headers:{"Content-Type":"application/json"
+      },
+   
+      body:JSON.stringify({ 
+        name,
+        username,
+        email,
+      password} 
+      )
+        
+    })
+    const data = await res.json()
+    // console.log('====================================');
+    // console.log({
+    //   campsite_name,
+    //   location_address,
+    //   business_registration_number,
+    //   description,
+    //   phone_number,
+    //   password } );
+    // console.log('====================================');
+
+    if(data.status === 422 || !data){
+      console.log('invalid registration');
+    }else{
+      console.log('Successfull')
+      console.log(data);
+
+    }
+  };
 return (
   <div className='regPage'>
     <NavLogo/>
