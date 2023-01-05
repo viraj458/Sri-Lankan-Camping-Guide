@@ -1,5 +1,6 @@
 import "./navbar.css"
 import logo from "./logo.png";
+import {Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -9,8 +10,8 @@ const Navbar = () => {
           <b>Sri Lankan<br/> Camping Guide</b></span>
           <img src={logo} className="appLogo" alt="logo"  />
         <div className="navItems">
-          <button className="navButton"><b>Sign in</b></button>
-          <button className="navButton"><b>Register</b></button>
+        <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
+        <Link to="/RoleselectorReg"><button className="navButton"><b>Register</b></button></Link>
         </div>
       </div>
     </div>

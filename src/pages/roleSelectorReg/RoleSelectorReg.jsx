@@ -1,7 +1,7 @@
-import "./roleSelector.css";
+import "./roleSelectorReg.css";
 import NavLogo from '../../components/navLogo/NavLogo';
 
-const RoleSelector = () => {
+const RoleSelectorReg = () => {
   return (
     <div className="fullRoleContainer">
       <NavLogo/>
@@ -10,8 +10,8 @@ const RoleSelector = () => {
             <h1 style={{textAlign:"center"}}>Hello User</h1>
             <h1 style={{textAlign:"left"}}>Are you a,</h1>
             <div className="buttons1">
-                <button className="navButton1">Camper</button>
-                <button className="navButton1">Campsite</button>
+                <button className="navButton1">Register Camper</button>
+                <button className="navButton1">Register Campsite</button>
             </div>
         </div>
     </div>
@@ -22,4 +22,4 @@ const RoleSelector = () => {
   )
 }
 
-export default RoleSelector
+export default RoleSelectorReg
