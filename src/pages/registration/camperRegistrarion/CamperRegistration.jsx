@@ -72,30 +72,7 @@ const CamperRegistration = () => {
   
     const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
-      fetch("http://localhost:5000/api/v1/register",{
-        method:"POST",
-        crossDomain:true,
-        header:{
-          "Content-type":"Application/json",
-          Accept:"Application/json"
-        },
-     
-        body:JSON.stringify({
-          name,
-          username,
-          email,
-          password
-        }
-        )
-          
-      }).then((res)=>res.json())
-      .then((data)=>{
-        console.log(data,"userRegister");
-      }).catch((err)=>{
-        console.error(err);
-      })
-    }
-
+      
 return (
   <div className='regPage'>
     <NavLogo/>
@@ -116,5 +93,5 @@ return (
   </div>
 )
 }
-
-export default CamperRegistration
+}
+export default CamperRegistration;
