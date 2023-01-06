@@ -4,7 +4,6 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
-import {Link } from "react-router-dom"; 
 
 const CampsiteRegistration = () => {
     const [values, setValues] = useState({
@@ -14,11 +13,13 @@ const CampsiteRegistration = () => {
       description:"",
       phone_number:"",
       password:"",
-      photos_of_location:"",
-      photos_of_legal_docs:""
 
 
       });
+
+      const [ photosOfLocation, setPhotosOfLocation] = useState([]);
+      const [ photosOfLegalDocs, setPhotosOfLegalDocs] = useState([]);
+      
 
     const inputs =[
      {
@@ -29,7 +30,7 @@ const CampsiteRegistration = () => {
           errorMessage:
             "Campsite name should be 3-16 characters and shouldn't include any special character!",
           label: "Campsite Name",
-          required: true,
+          required: false,
      }
      ,
      {
@@ -40,7 +41,7 @@ const CampsiteRegistration = () => {
           errorMessage:
             "Enter location address",
           label: "Location Address",
-          required: true,
+          required: false,
      }
      ,
      {
@@ -51,7 +52,7 @@ const CampsiteRegistration = () => {
         errorMessage:
           "Enter the business registration number",
         label: "Business Registration Number",
-        required: true,
+        required: false,
       },
     {
       id: 4,
@@ -61,7 +62,7 @@ const CampsiteRegistration = () => {
         errorMessage: "Enter a description",
         label: "Description",
         pattern: "^[A-Za-z0-9]{3,16}$",
-        required: true,
+        required: false,
      },
      {
       id: 5,
@@ -71,7 +72,7 @@ const CampsiteRegistration = () => {
       errorMessage:
         "Enter phone number",
       label: "Phone Number",
-      required: true,
+      required: false,
     },
     {
       id: 6,
@@ -82,7 +83,7 @@ const CampsiteRegistration = () => {
         "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
       label: "Password",
       pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-      required: true,
+      required: false,
     }
     ];
     
@@ -95,6 +96,42 @@ const CampsiteRegistration = () => {
       
     }
 
+    const handleChange = (files) => {
+    
+      for (const file of files){
+        const reader = new FileReader();
+  
+        reader.onload = () => {
+        const base64 = reader.result;
+  
+        const _ = photosOfLocation
+        _.push(base64)
+        setPhotosOfLocation(_)
+      } 
+      reader.readAsDataURL(file)
+      }
+      console.log(photosOfLocation); 
+    };
+
+    const handleChange2 = (files) => {
+    
+      for (const file of files){
+        const reader = new FileReader();
+  
+        reader.onload = () => {
+        const base64 = reader.result;
+  
+        const _ = photosOfLegalDocs
+        _.push(base64)
+        setPhotosOfLegalDocs(_)
+      } 
+      reader.readAsDataURL(file)
+      }
+      console.log(photosOfLegalDocs); 
+    };
+
+
+
     const handleSubmit = async(e) => {
       e.preventDefault();
 
@@ -104,7 +141,8 @@ const CampsiteRegistration = () => {
         business_registration_number,
         description,
         phone_number,
-        password} = values
+        password
+      } = values
 
 
         
@@ -120,7 +158,10 @@ const CampsiteRegistration = () => {
         business_registration_number,
         description,
         phone_number,
-        password} 
+        password,
+        photos_of_location:photosOfLocation,
+        photos_of_legal_docs:photosOfLegalDocs
+      } 
         )
           
       })
@@ -156,14 +197,14 @@ const CampsiteRegistration = () => {
                 {...input}
                 value={values[input.name]}
                 onChange={onChange}
-                onClick={handleSubmit}
+                
               />
             ))}
             <h4>Photos of campsite</h4>
-            <DragDrop />
+            <DragDrop handleChange={handleChange}/>
             <h4>Photos of legal documents</h4>
-            <DragDrop />
-            <button className='mybutton' >Register</button>
+            <DragDrop handleChange={handleChange2}/>
+            <button className='mybutton' onClick={handleSubmit}>Register</button>
           </form>
         </div>
     </div>

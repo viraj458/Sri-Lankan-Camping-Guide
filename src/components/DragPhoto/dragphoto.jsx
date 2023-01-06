@@ -4,11 +4,8 @@ import "./dragphoto.css";
 
 const fileTypes = ["JPG", "PNG", "GIF"];
 
-function DragDrop() {
-  const [file, setFile] = useState(null);
-  const handleChange = (file) => {
-    setFile(file);
-  };
+function DragDrop({handleChange}) {
+
   return (
     <>
     <FileUploader
