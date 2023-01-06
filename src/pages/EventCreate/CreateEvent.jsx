@@ -4,6 +4,7 @@ import DragDrop from "../../components/DragPhoto/dragphoto";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
 import NavLogo from '../../components/navLogo/NavLogo';
 
+
 const CreateEvent = () => {
   const [values, setValues] = useState({
     EventName: "",

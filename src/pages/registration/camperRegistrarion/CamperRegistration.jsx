@@ -2,7 +2,7 @@ import "./camperRegistration.css"
 import { useState } from 'react'
 import FormInput from '../../../components/formInput/FormInput'
 import NavLogo from '../../../components/navLogo/NavLogo'
-
+import {Link } from "react-router-dom";
 
 const CamperRegistration = () => {
   const [values, setValues] = useState({
@@ -124,7 +124,7 @@ return (
   <div className='regPage'>
     <NavLogo/>
       <div className="fullForm">
-      <form method = "POST" className="regForm" >
+      <form method = "POST" className="regForm"  >
           <h1>Camper Registration</h1>
           {inputs.map((input) => (
             <FormInput
@@ -132,9 +132,10 @@ return (
               {...input}
               value={values[input.name]}
               onChange={onChange}
+              onClick={handleSubmit}
             />
           ))}
-          <button className='mybutton' onClick={handleSubmit}>Sign Up</button>
+          <Link to="/camper_login"> <button className='mybutton' >Sign Up</button></Link>
         </form>
       </div>
   </div>

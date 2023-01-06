@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
 import "./event.css";
 import React from "react";
+import {Link } from "react-router-dom"; 
 
 const Event = () => {
   return (  
@@ -17,7 +18,7 @@ const Event = () => {
         <div className="eventcontent">
         <div className="ETitle">  
         <h4 className="eventTitle">Event Categories</h4>
-        <button className="createBtn"><b>Create Events</b></button>
+        <Link to="/CreateEvent"><button className="createBtn"><b>Create Events</b></button></Link>
         </div>
           <Featured />
           </div>

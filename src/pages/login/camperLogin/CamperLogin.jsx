@@ -2,6 +2,7 @@ import './CamperLogin.css'
 import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
+import {Link } from "react-router-dom";
 
 const CamperLogin = () => {
   const [values, setValues] = useState({
@@ -83,9 +84,10 @@ const CamperLogin = () => {
               {...input}
               value={values[input.name]}
               onChange={onChange}
+              onClick={handleSubmit} 
             />
           ))}
-          <button className='mybutton'onClick={handleSubmit}>Sign In</button>
+          <Link to="/"><button className='mybutton'>Sign In</button></Link>
         </form>
       </div>
   </div>

@@ -1,4 +1,5 @@
- import "./header.css"; 
+ import "./header.css";
+ import {Link } from "react-router-dom"; 
  
 const Header = ({ type }) => {
   return (
@@ -8,19 +9,19 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem">
            
-            <span><b>Home</b></span>
+          <Link to="/"> <span><b>Home</b></span></Link>
           </div>
           <div className="headerListItem">
             
-            <span><b>Gallery</b></span>
+          <Link to="/Gallery"> <span><b>Gallery</b></span></Link>
           </div>
           <div className="headerListItem">
             
-            <span><b>Contact US</b></span>
+          <Link to="/Contactus"> <span><b>Contact US</b></span></Link>
           </div>
           <div className="headerListItem">
             
-            <span><b>Help</b></span>
+          <Link to="/Help"> <span><b>Help</b></span></Link>
           </div>
           
         
