@@ -1,8 +1,18 @@
+.searchBox{
+  display: flex;
+  margin-top: 10px;
+}
+.searchBtn{
+  border-radius: 0px 8px 8px 0px;
+  border: none;
+  cursor: pointer;
+  background: rgb(156, 244, 23);
+}
 .searchBar{
   height: 25px;
   width: 98%;
   border: none;
-  border-radius: 8px;
+  border-radius: 8px 0px 0px 8px;
 
 }
 
