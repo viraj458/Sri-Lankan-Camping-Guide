@@ -4,7 +4,6 @@ import Header from "../../components/header/Header";
 import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
-import {Link } from "react-router-dom";
 
 import "./home.css";
 

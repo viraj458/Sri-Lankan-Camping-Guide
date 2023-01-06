@@ -7,14 +7,19 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navContainer">
         <span className="logo">
-          <b>Sri Lankan<br/> Camping Guide</b></span>
-          <img src={logo} className="appLogo" alt="logo"  />
+          <b>Sri Lankan<br/> Camping Guide</b>
+        </span>
+        <img src={logo} className="appLogo" alt="logo"  />
         <div className="navItems">
-        <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
-        <Link to="/RoleselectorReg"><button className="navButton"><b>Register</b></button></Link>
+          <div className="navBtns">
+          <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
+          <Link to="/RoleselectorReg"><button className="navButton"><b>Register</b></button></Link>
+          </div>
+          <input type="text" className="searchBar" placeholder="Location"/>
         </div>
       </div>
     </div>
+    
     
   )
 }
