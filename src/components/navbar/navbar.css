@@ -1,3 +1,11 @@
+.searchBar{
+  height: 25px;
+  width: 98%;
+  border: none;
+  border-radius: 8px;
+
+}
+
 .navbar{
   height: 78px;
   background-color: #b1cef7;
@@ -24,7 +32,7 @@
 .appLogo{
   object-fit: contain;
   height: 70px;
-  margin-left: -1000px;
+  margin-left: -1050px;
   margin-top: 10px;
  
  
@@ -34,7 +42,7 @@
 
 
 .navButton{
-  margin-left: 20px;
+  /* margin-left: 20px; */
   border: black;
   padding: 5px 10px;
   cursor: pointer;
@@ -45,6 +53,12 @@
   background-color: rgb(156, 244, 23);
   
   
+}
+
+.navBtns{
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 .navItems{
