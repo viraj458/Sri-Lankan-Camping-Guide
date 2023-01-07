@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import "./CreateEvent.css";
 import DragDrop from "../../components/DragPhoto/dragphoto";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
@@ -7,19 +8,25 @@ import NavLogo from '../../components/navLogo/NavLogo';
 
 const CreateEvent = () => {
   const [values, setValues] = useState({
-    EventName: "",
+    event_name: "",
     email: "",
-    StartingDate: "",
-    StartingTime: "",
-    EndingDate: "",
-    EndingTime: "",
+    event_location:"",
+    starting_date: "",
+    starting_time: "",
+    ending_date: "",
+    ending_time: "",
     
   });
+
+  const [ eventphoto, seteventphoto] = useState([]);
+  const [text, setText] = useState('Type');
+  const[event,setevent] = useState('Type');
+  
 
   const inputs = [
     {
       id: 1,
-      name: "eventname",
+      name: "event_name",
       type: "text",
       placeholder: "Event Name",
       errorMessage:
@@ -29,9 +36,8 @@ const CreateEvent = () => {
       required: true,
     },
 
-   
     {
-      id: 3,
+      id: 2,
       name: "email",
       type: "email",
       placeholder: "Email",
@@ -40,10 +46,23 @@ const CreateEvent = () => {
       required: true,
     },
 
+
+    {
+      id: 3,
+      name: "event_location",
+      type: "text",
+      placeholder: "Event Location",
+      errorMessage:
+        "Event Location should be 3-16 characters and shouldn't include any special character!",
+      label: "Event Location",
+      pattern: "^[A-Za-z0-9]{3,16}$",
+      required: true,
+    },
+    
  
     {
       id: 4,
-      name: "Startingdate",
+      name: "starting_date",
       type: "date",
       placeholder: "Starting Date",
       label: "Starting Date",
@@ -52,7 +71,7 @@ const CreateEvent = () => {
 
     {
       id: 5,
-      name: "StartingTime",
+      name: "starting_time",
       type: "time",
       placeholder: "Starting Time",
       label: "Starting Time",
@@ -62,7 +81,7 @@ const CreateEvent = () => {
 
     {
       id: 6,
-      name: "Endingdate",
+      name: "ending_date",
       type: "date",
       placeholder: "Ending Date",
       label: "Ending Date",
@@ -71,7 +90,7 @@ const CreateEvent = () => {
 
     {
       id: 7,
-      name: "EndingTime",
+      name: "ending_time",
       type: "time",
       placeholder: "Ending Time",
       label: "Ending Time",
@@ -81,21 +100,85 @@ const CreateEvent = () => {
    
   ];
 
+  const onChange = (e) => {
+    console.log(e);
+    let name = e.target.name;
+    let value = e.target.value;
+    setValues({ ...values, [name]:value});
+    
+  }
+
+  const handleChange3 = (files)=>{
+    for(const file of files){
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        const base64 = reader.result;
+  
+        const _ = eventphoto
+        _.push(base64)
+        seteventphoto(_)
+      } 
+      reader.readAsDataURL(file)
+      }
+      console.log(eventphoto); 
+
+
+    };
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-  };
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    const{
+      event_name,
+    email,
+    event_location,
+    starting_date,
+    starting_time,
+    ending_date,
+    ending_time} = values
+
+    const res = await fetch("http://localhost:5000/api/v1/event",{
+        method:"POST",
+        // crossDomain:true,
+        headers:{"Content-Type":"application/json"
+        },
+        body:JSON.stringify({ 
+          event_name,
+          email,
+          event_location,
+          starting_date,
+          starting_time,
+          ending_date,
+          ending_time,
+          event_category:event,
+          description:text,
+          addphoto:eventphoto
+          
+        }) 
+    })
+    const data = await res.json()
+
+
+
+
+
+    if(data.status === 422 || !data){
+      console.log('invalid registration');
+    }else{
+      console.log('Successfull')
+      console.log(data);
+
+    }
   };
+ 
 
   return (
     <div className="eventcreatepage"><NavLogo/>
     <div className="eventfullform">
          
-      <form className="eventform" onSubmit={handleSubmit}>
+      <form method ='POST' className="eventform" >
         <h1>Create Event</h1>
         {inputs.map((input) => (
           <EventFormInput
@@ -107,19 +190,22 @@ const CreateEvent = () => {
         ))}
 
         <label><br/>Event Category<br/></label>
-        <select>
+        <select value ={event} onChange={(e) =>setevent(e.target.value)} >
+          <option value="Adventure Camping">Adventure Camping</option>
           <option value="Beach Camping">Beach Camping</option>
+          <option value="Jungle Camping">Jungle Camping</option>
+          <option value="Luxury Camping">Luxury Camping</option>
           <option value="River Camping">River Camping</option>
-          <option selected value="River Camping">River Camping</option>
-          <option value="River Camping">River Camping</option>
+          <option value="Birdwatching Camping">Birdwatching Camping</option>
         </select>
 
         <label><br/><br/>Description<br/></label>
-        <textarea > </textarea>
+        <textarea value={text} 
+             onChange={(e) => setText(e.target.value) }> </textarea>
         
         <h4>Add Photos or drag and drop</h4>
-        <DragDrop/>
-        <button className='eventbutton'>Request</button>
+        <DragDrop handleChange={handleChange3}/>
+        <button className='eventbutton' onClick={handleSubmit}>Request</button>
       </form>
     </div>
     </div>

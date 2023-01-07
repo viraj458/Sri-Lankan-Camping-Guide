@@ -31,7 +31,7 @@ const Features = () => {
             </div>
           </div>
           <div className="featuredItem">
-          <Link to="/guidelines"> <img
+          <Link to="/rules"> <img
               src={x}
               alt=""
               className="featuredImg"
