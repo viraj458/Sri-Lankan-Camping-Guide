@@ -20,7 +20,7 @@ const CreateEvent = () => {
 
   const [ eventphoto, seteventphoto] = useState([]);
   const [text, setText] = useState('Type');
-  const[event,setevent] = useState('Type');
+  const[event,setevent] = useState("");
   
 
   const inputs = [
@@ -191,12 +191,12 @@ const CreateEvent = () => {
 
         <label><br/>Event Category<br/></label>
         <select value ={event} onChange={(e) =>setevent(e.target.value)} >
-          <option value="Adventure Camping">Adventure Camping</option>
-          <option value="Beach Camping">Beach Camping</option>
-          <option value="Jungle Camping">Jungle Camping</option>
-          <option value="Luxury Camping">Luxury Camping</option>
-          <option value="River Camping">River Camping</option>
-          <option value="Birdwatching Camping">Birdwatching Camping</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Beach">Beach</option>
+          <option value="Jungle">Jungle</option>
+          <option value="Luxury">Luxury</option>
+          <option value="River">River</option>
+          <option value="Birdwatching">Birdwatching</option>
         </select>
 
         <label><br/><br/>Description<br/></label>
