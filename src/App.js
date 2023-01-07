@@ -18,6 +18,7 @@ import CreateEvent from "./pages/EventCreate/CreateEvent";
 import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistration";
 import CampsiteLogin from "./pages/login/campsiteLogin/CampsiteLogin";
 import Contactus from "./pages/Contactus/Contactus";
+import Rule from "./pages/rules/rules";
 
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="/CreateEvent" element={<CreateEvent/>}/>
         <Route path="/campsite_registration" element={<CampsiteRegistration/>}/>
         <Route path="/Contactus" element={<Contactus/>}/>
+        <Route path="/rules" element={<Rule/>}/>
        
       </Routes>
     </BrowserRouter>

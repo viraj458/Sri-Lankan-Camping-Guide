@@ -132,10 +132,11 @@ return (
               {...input}
               value={values[input.name]}
               onChange={onChange}
-              onClick={handleSubmit}
+            
+
             />
           ))}
-          <Link to="/camper_login"> <button className='mybutton' >Sign Up</button></Link>
+           <button className='mybutton'   onClick={handleSubmit} >Sign Up</button>
         </form>
       </div>
   </div>
