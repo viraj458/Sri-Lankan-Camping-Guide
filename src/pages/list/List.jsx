@@ -2,21 +2,15 @@ import "./list.css";
 import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header"
 import SearchItem from "../../components/SearchItems/SearchItem";
-// import DateSelector from "../../components/DateSelector/DateSelector";
 import {useState} from 'react';
-import { useNavigate } from "react-router-dom";
+import { useLocation} from "react-router-dom";
 
 const List = () => {
 
-  
-  // const [openDate, setOpenDate] = useState(false)
-  const [destination, setDestination] = useState('')
 
-  const navigate = useNavigate()
+  const location = useLocation();
+  const [destination, setDestination] = useState(location.state)
 
-  const handleSearch = () => {
-    navigate('/', {state:destination})
-  }
   return (
     <div>
       <Navbar type='list'/>
@@ -28,15 +22,15 @@ const List = () => {
             <div className="lsItem">
               <label>Location</label>
               <input type="text" 
-              placeholder="Location"
-              onChange={e=>setDestination(e.target.value)}
+              className="searchbar"
+              placeholder={destination}
               />
             </div>
             <div className="lsItem">
               {/* <span onClick={()=>setOpenDate(!openDate)}>Search date</span> */}
             </div>
             <div>
-              <button onClick={handleSearch}>Search</button>
+              <button className="sbtn"><b>Search</b></button>
             </div>
             {/* {openDate && <DateSelector/>} */}
             

@@ -32,5 +32,23 @@
     flex: 3;
 }
 .lsItem{
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+}
+.searchbar{
+  height: 25px;
+  margin-top: 5px;
+  width: auto;
+  border: none;
+  border-radius: 8px;
+}
+
+.sbtn{
+    height: 30px;
+    width: 75px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background-color: #b1cef7;
 }
