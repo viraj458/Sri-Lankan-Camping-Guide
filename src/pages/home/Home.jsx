@@ -1,11 +1,11 @@
 import Features from "../../components/Features_home/Features";
 import Footer from "../../components/footer/Footer";
 import Header from "../../components/header/Header";
-import MostVisitedSites from "../../components/MostVisitedSites/MostVisitedSites";
 import Navbar from "../../components/navbar/Navbar";
 import Banner from "../../components/Banner/Banner";
-
+import FeaturedSites from "../../components/FeaturedSites/FeaturedSites";
 import "./home.css";
+
 
 
 const Home = () => {
@@ -19,8 +19,8 @@ const Home = () => {
       <div className="homeContainer">
         <h1 className="homeTitle">Features</h1>
         <Features/>
-        <h1 className="homeTitle">Most Visited Sites</h1>
-        <MostVisitedSites/> 
+        <h1 className="homeTitle">Featured Campsites</h1>
+        <FeaturedSites/> 
         <Footer/>
       </div> 
       

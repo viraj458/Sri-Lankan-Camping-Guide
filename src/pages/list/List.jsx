@@ -26,13 +26,9 @@ const List = () => {
               placeholder={destination}
               />
             </div>
-            <div className="lsItem">
-              {/* <span onClick={()=>setOpenDate(!openDate)}>Search date</span> */}
-            </div>
             <div>
               <button className="sbtn"><b>Search</b></button>
             </div>
-            {/* {openDate && <DateSelector/>} */}
             
 
           </div>

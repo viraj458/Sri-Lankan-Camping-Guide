@@ -9,6 +9,7 @@ const CampsiteRegistration = () => {
     const [values, setValues] = useState({
       campsite_name: "",
       location_address:"",
+      nearest_city:"",
       business_registration_number:"",
       description:"",
       phone_number:"",
@@ -19,6 +20,7 @@ const CampsiteRegistration = () => {
 
       const [ photosOfLocation, setPhotosOfLocation] = useState([]);
       const [ photosOfLegalDocs, setPhotosOfLegalDocs] = useState([]);
+    
       
 
     const inputs =[
@@ -42,10 +44,20 @@ const CampsiteRegistration = () => {
             "Enter location address",
           label: "Location Address",
           required: false,
-     }
-     ,
+     },
      {
       id: 3,
+        name: "nearest_city",
+        type: "text",
+        placeholder: "Nearest City",
+        errorMessage:
+          "Enter nearest city",
+        label: "Nearest City",
+        required: false,
+   }
+     ,
+     {
+      id: 4,
         name: "business_registration_number",
         type: "text",
         placeholder: "Business Registration Number",
@@ -55,17 +67,16 @@ const CampsiteRegistration = () => {
         required: false,
       },
     {
-      id: 4,
+      id: 5,
         name: "description",
         type: "text",
         placeholder: "Description",
         errorMessage: "Enter a description",
         label: "Description",
-        pattern: "^[A-Za-z0-9]{3,16}$",
         required: false,
      },
      {
-      id: 5,
+      id: 6,
       name: "phone_number",
       type: "text",
       placeholder: "Phone Number",
@@ -75,7 +86,7 @@ const CampsiteRegistration = () => {
       required: false,
     },
     {
-      id: 6,
+      id: 7,
       name: "password",
       type: "password",
       placeholder: "Password",
@@ -138,6 +149,7 @@ const CampsiteRegistration = () => {
       const { 
         campsite_name,
         location_address,
+        nearest_city,
         business_registration_number,
         description,
         phone_number,
@@ -155,6 +167,7 @@ const CampsiteRegistration = () => {
         body:JSON.stringify({ 
         campsite_name,
         location_address,
+        nearest_city,
         business_registration_number,
         description,
         phone_number,
