@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from 'react';
 import "./CreateEvent.css";
 import DragDrop from "../../components/DragPhoto/dragphoto";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
@@ -18,6 +19,8 @@ const CreateEvent = () => {
   });
 
   const [ eventphoto, seteventphoto] = useState([]);
+  const [text, setText] = useState('Type');
+  const[event,setevent] = useState('Type');
   
 
   const inputs = [
@@ -149,11 +152,18 @@ const CreateEvent = () => {
           starting_time,
           ending_date,
           ending_time,
+          event_category:event,
+          description:text,
           addphoto:eventphoto
           
         }) 
     })
     const data = await res.json()
+
+
+
+
+
     if(data.status === 422 || !data){
       console.log('invalid registration');
     }else{
@@ -180,19 +190,22 @@ const CreateEvent = () => {
         ))}
 
         <label><br/>Event Category<br/></label>
-        <select>
+        <select value ={event} onChange={(e) =>setevent(e.target.value)} >
+          <option value="Adventure Camping">Adventure Camping</option>
           <option value="Beach Camping">Beach Camping</option>
+          <option value="Jungle Camping">Jungle Camping</option>
+          <option value="Luxury Camping">Luxury Camping</option>
           <option value="River Camping">River Camping</option>
-          <option selected value="River Camping">River Camping</option>
-          <option value="River Camping">River Camping</option>
+          <option value="Birdwatching Camping">Birdwatching Camping</option>
         </select>
 
         <label><br/><br/>Description<br/></label>
-        <textarea > </textarea>
+        <textarea value={text} 
+             onChange={(e) => setText(e.target.value) }> </textarea>
         
         <h4>Add Photos or drag and drop</h4>
         <DragDrop handleChange={handleChange3}/>
-        <button className='eventbutton' onclick={handleSubmit}>Request</button>
+        <button className='eventbutton' onClick={handleSubmit}>Request</button>
       </form>
     </div>
     </div>
