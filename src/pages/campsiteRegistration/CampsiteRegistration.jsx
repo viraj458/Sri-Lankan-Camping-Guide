@@ -153,7 +153,8 @@ const CampsiteRegistration = () => {
         business_registration_number,
         description,
         phone_number,
-        password
+        password,
+        featured
       } = values
 
 
@@ -173,7 +174,8 @@ const CampsiteRegistration = () => {
         phone_number,
         password,
         photos_of_location:photosOfLocation,
-        photos_of_legal_docs:photosOfLegalDocs
+        photos_of_legal_docs:photosOfLegalDocs,
+        featured
       } 
         )
           

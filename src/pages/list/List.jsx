@@ -4,12 +4,16 @@ import Header from "../../components/header/Header"
 import SearchItem from "../../components/SearchItems/SearchItem";
 import {useState} from 'react';
 import { useLocation} from "react-router-dom";
+import useFetch from "../../hooks/useFetch";
 
 const List = () => {
 
 
   const location = useLocation();
   const [destination, setDestination] = useState(location.state)
+
+
+  const {data, loading, error} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
 
   return (
     <div>
@@ -33,12 +37,12 @@ const List = () => {
 
           </div>
           <div className="listResult">
-            <SearchItem/>
-            <SearchItem/>
-            <SearchItem/>
-            <SearchItem/>
-            <SearchItem/>
-            <SearchItem/>
+            {loading ? "Loading" : <>
+            {data.map(item=>(
+              <SearchItem item={item} key={item._id}/>
+            ))}
+            
+            </>} 
           </div>
         </div>
       </div>
