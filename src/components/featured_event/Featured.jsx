@@ -2,7 +2,7 @@ import "./featured.css";
 import beach from "./beach.png";
 import useFetch from "../../hooks/useFetch";
 import {Link } from "react-router-dom";
-//import { useState ,useEffect } from "react";
+
 import React from 'react';
 
 

@@ -24,7 +24,7 @@ const Eventupcoming = () => {
           <div className="coming_content">
           <div className="coming_Title">
           <Link to="/event_upcoming"> <button className="eventButton1"><b>Upcoming Events</b></button></Link>
-          <Link to="/event_past"><button className="eventButton2"><b>Past Events</b></button></Link>
+         
         </div>
             <div className="coming_topic">
                 <h1>Adventure Camping</h1>
