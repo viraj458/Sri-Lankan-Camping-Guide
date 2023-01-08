@@ -13,7 +13,7 @@ const Header = ({ type }) => {
           </div>
           <div className="headerListItem">
             
-          <Link to="/Gallery"> <span><b>Gallery</b></span></Link>
+          <Link to="/Gallary"> <span><b>Gallery</b></span></Link>
           </div>
           <div className="headerListItem">
             
@@ -21,7 +21,7 @@ const Header = ({ type }) => {
           </div>
           <div className="headerListItem">
             
-          <Link to="/Help"> <span><b>Help</b></span></Link>
+          
           </div>
           
         

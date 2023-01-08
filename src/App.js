@@ -11,7 +11,7 @@ import Event from "./pages/event/Event";
 import RoleSelector from "./pages/roleSelector/RoleSelector";
 import RoleSelectorReg from "./pages/roleSelectorReg/RoleSelectorReg";
 import Eventupcoming from "./pages/eventupcoming/Eventupcoming";
-
+import Gallary from "./pages/gallary/gallary";
 import CamperRegistration from "./pages/registration/camperRegistrarion/CamperRegistration";
 import EventID from "./pages/eventid/EventID";
 import CreateEvent from "./pages/EventCreate/CreateEvent";
@@ -38,7 +38,7 @@ function App() {
         <Route path="/roleselectorReg" element={<RoleSelectorReg/>}/>
         <Route path="/list" element={<List/>}/>
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
-      
+        <Route path="/gallary" element={<Gallary/>}/>
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
         <Route path="/event/:id" element={<EventID/>}/>
         <Route path="/CreateEvent" element={<CreateEvent/>}/>
