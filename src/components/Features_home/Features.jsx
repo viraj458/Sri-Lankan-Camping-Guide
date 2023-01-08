@@ -24,7 +24,7 @@ const Features = () => {
           </div>
 
           <div className="featuredItem">
-          <Link to="/list"><img
+          <Link to="/list_all"><img
               src={y}
               alt=""
               className="featuredImg"
