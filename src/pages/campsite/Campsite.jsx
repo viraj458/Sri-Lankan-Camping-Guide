@@ -16,14 +16,6 @@ const Campsite = () => {
   const { data, loading, error } = useFetch(`http://localhost:5000/api/v1/campsite/find/${id}`);
 
 
-  const photos = [
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-    {src:'https://media.istockphoto.com/id/911995140/photo/camping-tent-in-a-camping-in-a-forest-by-the-river.jpg?s=612x612&w=0&k=20&c=VTK_4PQ1fIRol9S40-3uXjJEve9HwbKOeginDDbpYZk='},
-  ]
   return (
     <div>
       <Navbar type='list'/>
