@@ -4,7 +4,10 @@ import y from "./y.jpg";
 import z from "./z.jpg";
 import {Link } from "react-router-dom";
 
+
 const Features = () => {
+
+
   return (
     <div className="features">
       
