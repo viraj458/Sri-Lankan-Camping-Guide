@@ -1,0 +1,28 @@
+.gaItem{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1024px;
+    position: relative;
+
+  
+  }
+
+  .gaImg{
+    width: 33%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-Right-radius: 15px;
+  }
+  
+  .gaName{
+    color: #333;
+    font-weight: bold;
+    padding-left: 5px;
+    font-size: 20px;
+   
+  }
+
+  .gadate{
+    height:50px;
+  }
