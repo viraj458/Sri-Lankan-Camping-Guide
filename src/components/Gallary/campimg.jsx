@@ -1,24 +1,44 @@
 import "./campimg.css"
-import site1 from "./site4.jpg"
-import site2 from "./site4.jpg"
-import site3 from "./site4.jpg"
-import site4 from "./site4.jpg"
+import {useState} from 'react';
+
+import useFetch from "../../hooks/useFetch";
+
 
 const Campimg = () => {
-    return (
 
-<div className="gaItem">
-          <img src={site1} alt="" className="gaImg" />
+  const { data, loading, error } = useFetch(
+    "http://localhost:5000/api/v1/allcampsites",
+   { method:"GET"
+});
+     console.log(data);
+  
+
+  
+    return (
+      <div>
+      {loading ? (
+        "loading"
+      ) : (
+      <>
+       {data.map((item)=>(
+
+        <div className="gaItem" key={item._id}>
+  
+
+  {item.photos_of_location?.map((photo) => (
+           <div>
+          <img src={photo} alt="" className="gaImg" /></div>))}
 
           <span className="gaName"> name</span>
 
-          <img src={site2} alt="" className="gaImg" />
-          <img src={site3} alt="" className="gaImg" />
-          <img src={site4} alt="" className="gaImg" />
-          <img src={site4} alt="" className="gaImg" />
+          
 
 
 
-        </div>)}
+        </div> 
+         ))}
+         </>
+      
+      )}</div>)}
 
 export default Campimg;
