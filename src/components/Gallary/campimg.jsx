@@ -29,7 +29,7 @@ const Campimg = () => {
            <div>
           <img src={photo} alt="" className="gaImg" /></div>))}
 
-          <span className="gaName"> name</span>
+          
 
           
 

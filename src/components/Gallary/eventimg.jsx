@@ -1,24 +1,37 @@
 import "./campimg.css"
-import site1 from "./site4.jpg"
-import site2 from "./site4.jpg"
-import site3 from "./site4.jpg"
-import site4 from "./site4.jpg"
+import {useState} from 'react';
+
+import useFetch from "../../hooks/useFetch";
 
 const Eventimg = () => {
+  const { data, loading, error } = useFetch(
+    "http://localhost:5000/api/v1/events",
+   { method:"GET"
+});
+     console.log(data);
+  
+
+  
     return (
+      <div>
+      {loading ? (
+        "loading"
+      ) : (
+      <>
+       {data.map((item)=>(
 
-<div className="gaItem">
-          <img src={site1} alt="" className="gaImg" />
+        <div className="gaItem" key={item._id}>
+  
 
-          <span className="gaName"> name</span>
+  {item.addphoto?.map((photo) => (
+           <div>
+          <img src={photo} alt="" className="gaImg" /></div>))}
+        </div> 
+         ))}
+         </>
+      
+      )}</div>)}
 
-          <img src={site2} alt="" className="gaImg" />
-          <img src={site3} alt="" className="gaImg" />
-          <img src={site4} alt="" className="gaImg" />
-          <img src={site4} alt="" className="gaImg" />
 
-
-
-        </div>)}
 
 export default Eventimg;
