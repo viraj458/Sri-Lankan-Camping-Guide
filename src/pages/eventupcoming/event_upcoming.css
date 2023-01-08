@@ -29,18 +29,7 @@
     background-color: green;
  }
 
- .eventButton2{
-    margin-left: 20px;
-    border: black;
-    padding: 5px;
-    cursor: pointer;
-    border-radius: 20px;
-    width:200px;
-    height:40px;
-    border-width: 5px;
-    font-size: 20px;
-    color: #1c3e6e;
- }
+ 
 
  .coming_topic{
     padding-top: 20px;
