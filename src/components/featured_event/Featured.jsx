@@ -1,89 +1,92 @@
 import "./featured.css";
 import beach from "./beach.png";
+import useFetch from "../../hooks/useFetch";
 import {Link } from "react-router-dom";
+//import { useState ,useEffect } from "react";
+import React from 'react';
 
 
 const Featured = () => {
+    
+
+  const { data, loading, error } = useFetch(
+    "http://localhost:5000/api/v1/events/countByCategory?category=Adventure,Beach,Jungle,Luxury,River,Birdwatching",
+   { method:"GET"
+});
+     console.log(data);
   return (
     <div>
-    <div className="feature">
-      <div className="featureItem">
-      <Link to="/event_upcoming">  <img
-          src={beach} alt="" className="featureImg"/></Link>
-        <div className="featureTitles">
-          <h1>Adventure Camping</h1>
-          <h2>123 events</h2>
-        </div>
-      </div>
-
-      <div className="featureItem">
-      <Link to="/event_upcoming"><img
-          src={beach}
-          alt=""
-          className="featureImg"
-        /></Link>
-        <div className="featureTitles">
-          <h1>Beach Camping</h1>
-          <h2>123 events</h2>
-        </div>
-      </div>
+      {loading ?(
+        "Loading please wait"
+      ):( 
+        
       
-      <div className="featureItem">
-      <Link to="/event_upcoming"> <img
-          src={beach}
-          alt=""
-          className="featureImg"
-        /></Link>
-        <div className="featureTitles">
-          <h1>Jungle Camping</h1>
-          <h2>533 events</h2>
-        </div>
-      </div>
-      
-    </div>
+    <><div className="feature">
+            <div className="featureItem">
+              <Link to="/event_upcoming">  <img
+                src={beach} alt="" className="featureImg" /></Link>
+              <div className="featureTitles">
+                <h1>Adventure Camping</h1>
+                <h2>{data[0]}</h2>
+              </div>
+            </div><div className="featureItem">
+              <Link to="/event_upcoming"><img
+                src={beach}
+                alt=""
+                className="featureImg" /></Link>
+              <div className="featureTitles">
+                <h1>Beach Camping</h1>
+                <h2>{data[1]}</h2>
+              </div>
+            </div><div className="featureItem">
+              <Link to="/event_upcoming"> <img
+                src={beach}
+                alt=""
+                className="featureImg" /></Link>
+              <div className="featureTitles">
+                <h1>Jungle Camping</h1>
+                <h2>{data[2]}</h2>
+              </div>
+            </div>
 
+          </div><div className="feature1">
+              <div className="featureItem1">
+                <Link to="/event_upcoming"> <img
+                  src={beach}
+                  alt=""
+                  className="featureImg1" /></Link>
+                <div className="featureTitles1">
+                  <h1>Luxury Camping</h1>
+                  <h2>{data[3]}</h2>
+                </div>
+              </div>
 
-      
-<div className="feature1">
-<div className="featureItem1">
-<Link to="/event_upcoming"> <img
-    src={beach}
-    alt=""
-    className="featureImg1"
-  /></Link>
-  <div className="featureTitles1">
-    <h1>Luxury Camping</h1>
-    <h2>123 events</h2>
-  </div>
+              <div className="featureItem">
+                <Link to="/event_upcoming"> <img
+                  src={beach}
+                  alt=""
+                  className="featureImg" /></Link>
+                <div className="featureTitles">
+                  <h1>River Camping</h1>
+                  <h2>{data[4]}</h2>
+                </div>
+              </div>
+
+              <div className="featureItem1">
+                <Link to="/event_upcoming"> <img
+                  src={beach}
+                  alt=""
+                  className="featureImg1" /></Link>
+                <div className="featureTitles1">
+                  <h1>BirdWatching Camping</h1>
+                  <h2>{data[5]}</h2>
+                </div>
+              </div>
+
+            </div></> 
+
+      )}
 </div>
-
-<div className="featureItem">
-<Link to="/event_upcoming"> <img
-          src={beach}
-          alt=""
-          className="featureImg"
-        /></Link>
-        <div className="featureTitles">
-          <h1>River Camping</h1>
-          <h2>123 events</h2>
-        </div>
-      </div>
-
-<div className="featureItem1">
-<Link to="/event_upcoming"> <img
-    src={beach}
-    alt=""
-    className="featureImg1"
-  /></Link>
-  <div className="featureTitles1">
-    <h1>BirdWatching Camping</h1>
-    <h2>533 events</h2>
-  </div>
-</div>
-
-</div>
-</div>
-    
   );
 };
 
