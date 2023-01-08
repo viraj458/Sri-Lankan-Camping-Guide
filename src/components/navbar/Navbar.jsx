@@ -17,7 +17,7 @@ const Navbar = ({type}) => {
   return (
     <div className="navbar">
       <div className="navContainer">
-      <Link to='/'>
+      <Link to='/' style={{color:"inherit", textDecoration:"none"}}>
        <span className="logo">
        <b>Sri Lankan<br/> Camping Guide</b>
        </span>

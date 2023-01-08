@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./footer.css";
 
 const Footer = () => {
@@ -19,9 +20,9 @@ const Footer = () => {
         <div className="ftitle"><h3 >Main menu</h3></div>
         
           <ul className="fList">
-            <li className="fListItem">Home </li>
-            <li className="fListItem">Galery </li>
-            <li className="fListItem">Contact us </li>
+            <Link to="/" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Home </li></Link>
+            <Link to="/gallary" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Galery </li></Link>
+            <Link to="/Contactus" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Contact us </li></Link>
           </ul>
         </div>  
         <div className="fList">
@@ -29,10 +30,9 @@ const Footer = () => {
         <div className="ftitle"><h3 >Quick links</h3></div>  
         
           <ul className="fList">
-            <li className="fListItem">Camping sites </li>
-            <li className="fListItem">Events</li>
-            <li className="fListItem">Tips </li>
-            <li className="fListItem">Camping regulations </li>
+          <Link to="/list_all" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Camping sites</li></Link>
+          <Link to="/event" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Events</li></Link>
+          <Link to="/rules" style={{color:"inherit", textDecoration:"none"}}><li className="fListItem">Camping regulations </li></Link>
           </ul>
         </div>
 
