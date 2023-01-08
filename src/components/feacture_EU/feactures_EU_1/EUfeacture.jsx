@@ -1,5 +1,5 @@
 import "./EUfeacture.css";
-import beach from "./beach.png";
+
 import useFetch from "../../../hooks/useFetch";
 import {Link } from "react-router-dom";
 import React from 'react';
@@ -22,7 +22,7 @@ const EUfeacture = () => {
         <>
        {data.map((item)=>(
       <div className="fpItem" key={item._id}>
-        <img src={beach} alt="" className="fpImg"/>
+        <img src={item.addphoto[0]}  alt="" className="fpImg"/>
         <div className="fpdate">
         <span className="fpName">{item.event_name}</span><br/>
         <span>Date :{item.starting_date}</span></div>
