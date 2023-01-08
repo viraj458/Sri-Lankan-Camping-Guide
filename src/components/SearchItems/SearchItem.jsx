@@ -4,19 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar} from "@fortawesome/free-solid-svg-icons";
 import {Link } from "react-router-dom"; 
 
-const SearchItem = () => {
+const SearchItem = ({item}) => {
   return (
-    <div className="searchItem">
-      <img src={site3} alt="" className="sItemImage" />
+    <div className="searchItem" key={item._id}>
+      <img src={item.photos_of_location[0]} alt="" className="sItemImage" />
       <div className="sItemDiscription">
-        <h3  className="sItemTitle">Eco Lodge Haputhale Camping </h3 >
-        <span className="sItemDetails">Eco Lodge Haputhale Camping is set in Haputhale.A full English/Irish breakfast is avalable every morning at campsite.</span>
-        <Link to="/campsites/:id"><button className="sItemButton"><b>View</b></button></Link>
+        <h3  className="sItemTitle">{item.campsite_name}</h3 >
+        <span className="sItemDetails">{item.description}</span>
+        <Link to={`/campsite/${item._id}`}><button className="sItemButton"><b>View</b></button></Link>
       </div>
-      <div className="sItemOther">
+      {/* <div className="sItemOther">
         <FontAwesomeIcon icon={faStar} />
         <div className="sItemRating">9.5</div>
-      </div>
+      </div> */}
     </div>
   )
 }
