@@ -9,15 +9,15 @@ const Header = ({ type }) => {
         <div className="headerList">
           <div className="headerListItem">
            
-          <Link to="/"> <span><b>Home</b></span></Link>
+          <Link to="/" style={{color:"inherit", textDecoration:"none"}}> <span><b>Home</b></span></Link>
           </div>
           <div className="headerListItem">
             
-          <Link to="/Gallary"> <span><b>Gallery</b></span></Link>
+          <Link to="/Gallary" style={{color:"inherit", textDecoration:"none"}}> <span><b>Gallery</b></span></Link>
           </div>
           <div className="headerListItem">
             
-          <Link to="/Contactus"> <span><b>Contact US</b></span></Link>
+          <Link to="/Contactus" style={{color:"inherit", textDecoration:"none"}}> <span><b>Contact US</b></span></Link>
           </div>
           <div className="headerListItem">
             

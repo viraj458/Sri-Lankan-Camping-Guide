@@ -1,5 +1,6 @@
 import "./FeaturedSites.css"
 import useFetch from "../../hooks/useFetch"
+import { Link } from "react-router-dom";
 // import site1 from "./site1.jpg"
 // import site2 from "./site2.jpg"
 // import site3 from "./site3.jpg"
@@ -27,7 +28,7 @@ const FeaturedSites = () => {
               />
               <span className="fpName">{item.campsite_name}</span>
               <span className="fpCity">{item.nearest_city}</span>
-              
+              <Link to={`/campsite/${item._id}`}><button className="sItemButton"><b>View</b></button></Link>
             </div>
           ))}
         </>
