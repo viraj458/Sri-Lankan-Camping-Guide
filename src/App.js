@@ -19,6 +19,7 @@ import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistrat
 import CampsiteLogin from "./pages/login/campsiteLogin/CampsiteLogin";
 import Contactus from "./pages/Contactus/Contactus";
 import Rule from "./pages/rules/rules";
+import ListAll from "./pages/listAll/ListAll";
 
 
 
@@ -37,6 +38,7 @@ function App() {
         <Route path="/roleselector" element={<RoleSelector/>}/> 
         <Route path="/roleselectorReg" element={<RoleSelectorReg/>}/>
         <Route path="/list" element={<List/>}/>
+        <Route path="/list_all" element={<ListAll/>}/>
         <Route path="/event_upcoming" element={<Eventupcoming/>}/>
         <Route path="/gallary" element={<Gallary/>}/>
         <Route path="/camper_registration" element={<CamperRegistration/>}/>
