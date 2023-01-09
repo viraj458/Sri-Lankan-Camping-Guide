@@ -1,8 +1,10 @@
 .fp {
-    width: 100%;
-    max-width: 1024px;
+    max-width:fit-content;
     display:flex;
     gap: 20px;
+    width:1024px;
+   
+    
     
     
     
@@ -10,7 +12,7 @@
   
   .fpItem{
     gap: 10px;
-    width:30%;
+    width:33%;
     justify-content: space-between;
     background-color: aliceblue;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -25px;

@@ -28,17 +28,13 @@ const FeatureeventID = () => {
               <button onClick={() => {alert('You are joined!');}}>Join</button>
             </div>
           </div><div className="Pics">
+          {data.addphoto?.map((photo1) =>(
               <div className="IDfeaturedItem">
-                <img src={beach} alt="" className="IDfeaturedImg" />
-              </div>
+               
+                <img src={photo1} alt="" className="IDfeaturedImg" />
+              </div>))}
 
-              <div className="IDfeaturedItem">
-                <img src={beach} alt="" className="IDfeaturedImg" />
-              </div>
-
-              <div className="IDfeaturedItem">
-                <img src={beach} alt="" className="IDfeaturedImg" />
-              </div>
+             
 
 
             </div></>)}
