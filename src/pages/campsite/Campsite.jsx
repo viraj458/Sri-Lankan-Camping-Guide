@@ -16,7 +16,6 @@ const Campsite = () => {
   const { data, loading, error } = useFetch(`http://localhost:5000/api/v1/campsite/find/${id}`);
 
 
-  
   return (
     <div>
       <Navbar type='list'/>

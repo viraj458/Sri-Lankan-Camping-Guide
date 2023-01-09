@@ -3,17 +3,20 @@ import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header"
 import SearchItem from "../../components/SearchItems/SearchItem";
 import {useState} from 'react';
-import { useLocation} from "react-router-dom";
+import { useLocation, useNavigate} from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 const List = () => {
 
-
+ 
   const location = useLocation();
   const [destination, setDestination] = useState(location.state)
 
+  const handleClick = () => {
+    reFetch()
+  }
 
-  const {data, loading, error} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
+  const {data, loading, error, reFetch} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
 
   return (
     <div>
@@ -28,10 +31,11 @@ const List = () => {
               <input type="text" 
               className="searchbar"
               placeholder={destination}
+              onChange={e=>setDestination(e.target.value)}
               />
             </div>
             <div>
-              <button className="sbtn"><b>Search</b></button>
+              <button  className="sbtn" onClick={handleClick}><b>Search</b></button>
             </div>
             
 

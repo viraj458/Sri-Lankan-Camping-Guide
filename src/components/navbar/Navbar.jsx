@@ -17,10 +17,15 @@ const Navbar = ({type}) => {
   return (
     <div className="navbar">
       <div className="navContainer">
-        <span className="logo">
-          <b>Sri Lankan<br/> Camping Guide</b>
-        </span>
-        <img src={logo} className="appLogo" alt="logo"  />
+      <Link to='/'>
+       <span className="logo">
+       <b>Sri Lankan<br/> Camping Guide</b>
+       </span>
+       </Link>
+      <img src={logo} className="appLogo" alt="logo"  />
+         
+         
+        
         <div className="navItems">
           <div className="navBtns">
           <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
