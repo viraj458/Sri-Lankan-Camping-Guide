@@ -3,23 +3,26 @@ import "./Contactus.css";
 import NavLogo from "../../components/navLogo/NavLogo";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
 import {Link } from "react-router-dom"; 
+import React from 'react';
 
 
 
 const Contactus = () => {
   const [values, setValues] = useState({
-    name: "",
-    email: "",
-    Subject: "",
-    Sugessions: "",
+    contact_name: "",
+    contact_email: "",
+    subject: "",
+    suggesion: "",
   
     
   });
 
+  const [text1, setText1] = useState('Types');
+
   const inputs = [
     {
       id: 1,
-      name: "name",
+      name: "contact_name",
       type: "text",
       placeholder: "Name",
       errorMessage:
@@ -32,7 +35,7 @@ const Contactus = () => {
    
     {
       id: 2,
-      name: "email",
+      name: "contact_email",
       type: "email",
       placeholder: "Email",
       errorMessage: "It should be a valid email address!",
@@ -52,7 +55,7 @@ const Contactus = () => {
 
     {
       id:4,
-      name: "sugession",
+      name: "suggesion",
       type: "text",
       placeholder: "Sugessions",
       label: "Sugessions",
@@ -65,21 +68,60 @@ const Contactus = () => {
    
   ];
 
+  const onChange = (e) => {
+    console.log(e);
+    let name = e.target.name;
+    let value = e.target.value;
+    setValues({ ...values, [name]:value});
+    
+  };
+
   
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  };
 
-  const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+    const{
+      contact_name,
+    contact_email,
+    subject,
+    suggesion
+  
+    } = values
+
+    const res = await fetch("http://localhost:5000/api/v1/contact",{
+        method:"POST",
+        // crossDomain:true,
+        headers:{"Content-Type":"application/json"
+        },
+        body:JSON.stringify({ 
+          contact_name,
+          contact_email,
+          subject,
+          suggesion,
+          message:text1
+
+
+
+  })
+
+})
+const data = await res.json()
+
+if(data.status === 422 || !data){
+  console.log('invalid registration');
+}else{
+  console.log('Successfull')
+  console.log(data);
+
+}
+};
 
   return (
     <div className="contactpage"><NavLogo/>
     <div className="contactfullform">
          
-      <form className="contactform" onSubmit={handleSubmit}>
+      <form method= 'POST' className="contactform" >
         <h1>Contact us</h1>
         {inputs.map((input) => (
           <EventFormInput
@@ -89,11 +131,12 @@ const Contactus = () => {
             onChange={onChange}
           />
         ))}
-        <label><br/><br/><br/></label>
-        <textarea > </textarea>
+        <label><br/>Message<br/></label>
+        <textarea value={text1} 
+             onChange={(e) => setText1(e.target.value) } > </textarea>
         
         
-        <Link to="/"> <button className='contactbutton'>Send</button></Link>
+         <button className='contactbutton'onClick={handleSubmit}>Send</button>
       </form>
     </div>
    
