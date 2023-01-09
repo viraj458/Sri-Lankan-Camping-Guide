@@ -20,6 +20,7 @@ import CampsiteLogin from "./pages/login/campsiteLogin/CampsiteLogin";
 import Contactus from "./pages/Contactus/Contactus";
 import Rule from "./pages/rules/rules";
 import ListAll from "./pages/listAll/ListAll";
+import SitePackage from "./components/SitePackage/SitePackage";
 
 
 
@@ -47,6 +48,7 @@ function App() {
         <Route path="/campsite_registration" element={<CampsiteRegistration/>}/>
         <Route path="/Contactus" element={<Contactus/>}/>
         <Route path="/rules" element={<Rule/>}/>
+        <Route path="/pkgs" element={<SitePackage/>}/>
        
       </Routes>
     </BrowserRouter>
