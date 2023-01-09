@@ -1,11 +1,11 @@
-import "./mostVisitedSites.css"
+import "./Packages.css"
 import site1 from "./site1.jpg"
 import site2 from "./site2.jpg"
 import site3 from "./site3.jpg"
 import site4 from "./site4.jpg"
 import {Link } from "react-router-dom"; 
 
-const MostVisitedSites = () => {
+const Packages = () => {
   return (
     <div className="cList">
       <div className="cListItem">
@@ -40,4 +40,4 @@ const MostVisitedSites = () => {
   )
 }
 
-export default MostVisitedSites
+export default Packages
