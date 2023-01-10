@@ -2,9 +2,10 @@ import "./camperRegistration.css"
 import { useState } from 'react'
 import FormInput from '../../../components/formInput/FormInput'
 import NavLogo from '../../../components/navLogo/NavLogo'
-import {Link } from "react-router-dom";
-
+import {useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
 const CamperRegistration = () => {
+  const navigate  = useNavigate()
   const [values, setValues] = useState({
       name: "",
       username:"",
@@ -87,12 +88,10 @@ const CamperRegistration = () => {
 
 
       
-      const res = await fetch("http://localhost:5000/api/v1/register",{
+      const res = await fetch("http://localhost:5000/api/v1/register/",{
       method:"POST",
-      // crossDomain:true,
       headers:{"Content-Type":"application/json"
       },
-   
       body:JSON.stringify({ 
         name,
         username,
@@ -101,23 +100,15 @@ const CamperRegistration = () => {
       )
         
     })
+    
     const data = await res.json()
-    // console.log('====================================');
-    // console.log({
-    //   campsite_name,
-    //   location_address,
-    //   business_registration_number,
-    //   description,
-    //   phone_number,
-    //   password } );
-    // console.log('====================================');
 
     if(data.status === 422 || !data){
       console.log('invalid registration');
     }else{
-      console.log('Successfull')
-      console.log(data);
-
+      Cookies.set('jwt', data.data.token, { expires: 1 });
+      navigate('/', { replace: true });
+      window.location.reload();
     }
   };
 return (

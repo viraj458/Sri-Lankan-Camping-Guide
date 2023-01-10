@@ -21,6 +21,7 @@ import Contactus from "./pages/Contactus/Contactus";
 import Rule from "./pages/rules/rules";
 import ListAll from "./pages/listAll/ListAll";
 import SitePackage from "./components/SitePackage/SitePackage";
+import Logout from "./components/Logout/Logout";
 
 
 
@@ -49,7 +50,7 @@ function App() {
         <Route path="/Contactus" element={<Contactus/>}/>
         <Route path="/rules" element={<Rule/>}/>
         <Route path="/pkgs" element={<SitePackage/>}/>
-       
+        <Route path="/logout" element={<Logout/>}/>
       </Routes>
     </BrowserRouter>
   );

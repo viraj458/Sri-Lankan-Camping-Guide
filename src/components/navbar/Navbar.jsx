@@ -4,8 +4,13 @@ import {Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = ({type}) => {
+
+  const user = useContext(AuthContext)
+  
 
   const [destination, setDestination] = useState('')
 
@@ -28,8 +33,18 @@ const Navbar = ({type}) => {
         
         <div className="navItems">
           <div className="navBtns">
-          <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
-          <Link to="/RoleselectorReg"><button className="navButton"><b>Register</b></button></Link>
+          {!user && 
+          <>
+            <Link to="/Roleselector"><button className="navButton"><b>Sign in</b></button></Link>
+            <Link to="/RoleselectorReg"><button className="navButton"><b>Register</b></button></Link>
+            </>
+          }
+          {user && 
+            <>
+                <Link to="/logout"><button className="navButton"><b>Logout</b></button></Link>
+                <Link to="/Roleselector"><button className="navButton"><b>{user['username']}</b></button></Link>
+            </>
+          }
           </div>
           { type !=='list' && <><div className="searchBox">
             <input type="text" onChange={e=>setDestination(e.target.value)} className="searchBar" placeholder="Location"/>
