@@ -10,6 +10,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Navbar = ({type}) => {
 
   const user = useContext(AuthContext)
+  const campsite = useContext(AuthContext)
   
 
   const [destination, setDestination] = useState('')

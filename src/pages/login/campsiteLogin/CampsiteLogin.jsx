@@ -2,8 +2,12 @@ import './CampsiteLogin.css'
 import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
+import {Link } from "react-router-dom";
+import {useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const CampsiteLogin = () => {
+  const navigate  = useNavigate()
   const [values, setValues] = useState({
     business_registration_number:"",
     password:"",
@@ -43,6 +47,7 @@ const CampsiteLogin = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+try{
     const { business_registration_number, password } = values
 
       const res = await fetch("http://localhost:5000/api/v1/login_campsite",{
@@ -60,15 +65,21 @@ const CampsiteLogin = () => {
         
     })
     const data = await res.json()
-
-    if(data.status === 422 || !data){
-      console.log('invalid login');
-    }else{
-      console.log('Successfull')
-      console.log(data);
+      if(!res.ok)throw Error(data['error'])
+      Cookies.set('jwt',data.data.token,{expires:1});
+      navigate('/',{replace:true});
+      window.location.reload();
+  }catch(error){
+    console.log(error.meassage);
+  }
+    // if(data.status === 422 || !data){
+    //   console.log('invalid login');
+    // }else{
+    //   console.log('Successfull')
+    //   console.log(data);
 
     }
-  };
+  
 
   return (
     <div className='regPage'>
