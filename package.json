@@ -13,6 +13,8 @@
     "axios": "^1.2.2",
     "bootstrap": "^5.2.1",
     "date-fns": "^2.29.3",
+    "jose": "^4.11.2",
+    "js-cookie": "^3.0.1",
     "react": "^18.0.0",
     "react-bootstrap": "^2.5.0",
     "react-date-range": "^1.4.0",

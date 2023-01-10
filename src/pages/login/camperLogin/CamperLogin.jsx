@@ -3,8 +3,10 @@ import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
 import {Link } from "react-router-dom";
-
+import {useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
 const CamperLogin = () => {
+  const navigate  = useNavigate()
   const [values, setValues] = useState({
     email:"",
     password:"",
@@ -46,8 +48,8 @@ const CamperLogin = () => {
     const handleSubmit = async(e) => {
       e.preventDefault();
 
-      const { email, password } = values
-
+      try {
+        const { email, password } = values
         const res = await fetch("http://localhost:5000/api/v1/login",{
         method:"POST",
         // crossDomain:true,
@@ -55,7 +57,6 @@ const CamperLogin = () => {
         },
      
         body:JSON.stringify({
-          
           email,
           password
         }
@@ -63,14 +64,15 @@ const CamperLogin = () => {
           
       })
       const data = await res.json()
+        if (!res.ok) throw Error(data['error'])
+        Cookies.set('jwt', data.data.token, { expires: 1 });
+        navigate('/', { replace: true });
+        window.location.reload();
 
-      if(data.status === 422 || !data){
-        console.log('invalid login');
-      }else{
-        console.log('Successfull')
-        console.log(data);
-
+      } catch (error) {
+        console.log(error.message);
       }
+      
     };
   return (
     <div className='regPage'>
@@ -84,14 +86,14 @@ const CamperLogin = () => {
               {...input}
               value={values[input.name]}
               onChange={onChange}
-              onClick={handleSubmit} 
+             
             />
           ))}
-          <Link to="/"><button className='mybutton'>Sign In</button></Link>
+          <Link to="/"><button className='mybutton'  onClick={handleSubmit} >Sign In</button></Link>
         </form>
       </div>
   </div>
   )
 }
 
-export default CamperLogin
+export default CamperLogin;
