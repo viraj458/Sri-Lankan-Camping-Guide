@@ -2,6 +2,10 @@ import './CampsiteLogin.css'
 import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
+<<<<<<< HEAD
+=======
+import {Link } from "react-router-dom";
+>>>>>>> 0ddc5a00865b5ebb08e80b06ced3a48782d7fa23
 import {useNavigate  } from "react-router-dom";
 import Cookies from 'js-cookie';
 
@@ -46,8 +50,12 @@ const CampsiteLogin = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+<<<<<<< HEAD
     try{
 
+=======
+try{
+>>>>>>> 0ddc5a00865b5ebb08e80b06ced3a48782d7fa23
     const { business_registration_number, password } = values
 
       const res = await fetch("http://localhost:5000/api/v1/login_campsite",{
@@ -65,6 +73,7 @@ const CampsiteLogin = () => {
         
     })
     const data = await res.json()
+<<<<<<< HEAD
         if (!res.ok) {
           throw Error(data['error'])
         }
@@ -76,6 +85,23 @@ const CampsiteLogin = () => {
         console.log(error.message);
       }
   };
+=======
+      if(!res.ok)throw Error(data['error'])
+      Cookies.set('jwt',data.data.token,{expires:1});
+      navigate('/',{replace:true});
+      window.location.reload();
+  }catch(error){
+    console.log(error.meassage);
+  }
+    // if(data.status === 422 || !data){
+    //   console.log('invalid login');
+    // }else{
+    //   console.log('Successfull')
+    //   console.log(data);
+
+    }
+  
+>>>>>>> 0ddc5a00865b5ebb08e80b06ced3a48782d7fa23
 
   return (
     <div className='regPage'>

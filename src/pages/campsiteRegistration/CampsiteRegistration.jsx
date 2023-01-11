@@ -4,12 +4,21 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
+<<<<<<< HEAD
 import {useNavigate  } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { toFormData } from 'axios'
 
 const CampsiteRegistration = () => {
     const navigate  = useNavigate()
+=======
+import {Link, useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
+
+const CampsiteRegistration = () => {
+
+  const navigate  = useNavigate()
+>>>>>>> 0ddc5a00865b5ebb08e80b06ced3a48782d7fa23
     const [values, setValues] = useState({
       campsite_name: "",
       location_address:"",
@@ -199,8 +208,9 @@ const CampsiteRegistration = () => {
       if(data.status === 422 || !data){
         console.log('invalid registration');
       }else{
-        console.log('Successfull')
-        console.log(data);
+        Cookies.set('jwt',data.data.token,{expires:1});
+        navigate('/pkgs',{replace:true});
+        window.location.reload();
 
         Cookies.set('jwt', data.data.token, { expires: 1 });
         navigate('/', { replace: true });
@@ -228,6 +238,7 @@ const CampsiteRegistration = () => {
             <DragDrop handleChange={handleChange}/>
             <h4>Photos of legal documents</h4>
             <DragDrop handleChange={handleChange2}/>
+            {/* <Link to="/pkgs"><button className='mybutton'>Add Package</button></Link> */}
             <button className='mybutton' onClick={handleSubmit}>Register</button>
           </form>
         </div>
