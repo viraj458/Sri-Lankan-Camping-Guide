@@ -4,7 +4,7 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
-
+import {Link } from "react-router-dom"; 
 import {useNavigate  } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { toFormData } from 'axios'
@@ -205,9 +205,9 @@ const CampsiteRegistration = () => {
         navigate('/pkgs',{replace:true});
         window.location.reload();
 
-        Cookies.set('jwt', data.data.token, { expires: 1 });
-        navigate('/', { replace: true });
-       window.location.reload();
+      //   Cookies.set('jwt', data.data.token, { expires: 1 });
+      //   navigate('/', { replace: true });
+      //  window.location.reload();
 
       }
     };
@@ -231,8 +231,8 @@ const CampsiteRegistration = () => {
             <DragDrop handleChange={handleChange}/>
             <h4>Photos of legal documents</h4>
             <DragDrop handleChange={handleChange2}/>
-            {/* <Link to="/pkgs"><button className='mybutton'>Add Package</button></Link> */}
-            <button className='mybutton' onClick={handleSubmit}>Register</button>
+          
+              <button className='mybutton' onClick={handleSubmit}>Register</button>
           </form>
         </div>
     </div>

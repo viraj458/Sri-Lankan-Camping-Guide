@@ -136,7 +136,7 @@ if(data.status === 422 || !data){
              onChange={(e) => setText1(e.target.value) } > </textarea>
         
         
-         <button className='contactbutton'onClick={handleSubmit}>Send</button>
+        <Link to="/"><button className='contactbutton'>Send</button></Link>
       </form>
     </div>
    
