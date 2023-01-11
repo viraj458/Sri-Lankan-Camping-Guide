@@ -32,7 +32,7 @@ const CreateEvent = () => {
       errorMessage:
         "Event Name should be 3-16 characters and shouldn't include any special character!",
       label: "Event Name",
-      pattern: "^[A-Za-z0-9]{3,16}$",
+      
       required: true,
     },
 
