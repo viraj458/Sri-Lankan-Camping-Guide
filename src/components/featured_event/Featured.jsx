@@ -1,5 +1,10 @@
 import "./featured.css";
 import beach from "./beach.png";
+import jungle from "./jungle.jpg";
+import adventure from "./adventure.jpg";
+import birdwatching from "./bird-watching.jpg";
+import luxury from "./luxury.jpg";
+import river from "./river.jpg";
 import useFetch from "../../hooks/useFetch";
 import {Link } from "react-router-dom";
 
@@ -24,7 +29,7 @@ const Featured = () => {
     <><div className="feature">
             <div className="featureItem">
               <Link to="/event_upcoming">  <img
-                src={beach} alt="" className="featureImg" /></Link>
+                src={adventure} alt="" className="featureImg" /></Link>
               <div className="featureTitles">
                 <h1>Adventure Camping</h1>
                 <h2>{data[0]}</h2>
@@ -40,7 +45,7 @@ const Featured = () => {
               </div>
             </div><div className="featureItem">
               <Link to="/event_upcoming"> <img
-                src={beach}
+                src={jungle}
                 alt=""
                 className="featureImg" /></Link>
               <div className="featureTitles">
@@ -52,7 +57,7 @@ const Featured = () => {
           </div><div className="feature1">
               <div className="featureItem1">
                 <Link to="/event_upcoming"> <img
-                  src={beach}
+                  src={luxury}
                   alt=""
                   className="featureImg1" /></Link>
                 <div className="featureTitles1">
@@ -63,7 +68,7 @@ const Featured = () => {
 
               <div className="featureItem">
                 <Link to="/event_upcoming"> <img
-                  src={beach}
+                  src={river}
                   alt=""
                   className="featureImg" /></Link>
                 <div className="featureTitles">
@@ -74,7 +79,7 @@ const Featured = () => {
 
               <div className="featureItem1">
                 <Link to="/event_upcoming"> <img
-                  src={beach}
+                  src={birdwatching}
                   alt=""
                   className="featureImg1" /></Link>
                 <div className="featureTitles1">

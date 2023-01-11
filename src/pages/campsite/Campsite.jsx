@@ -51,7 +51,9 @@ const Campsite = () => {
           <div className="packageDetails">
             <h1>Packages</h1>
             <Packages/>
+            <button onClick={() => {alert('Booking complete!');}}>Book</button>
           </div>
+          
           <hr />
   
         </div>
