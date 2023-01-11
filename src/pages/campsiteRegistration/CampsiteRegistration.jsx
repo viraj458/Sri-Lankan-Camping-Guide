@@ -4,21 +4,14 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
-<<<<<<< HEAD
+
 import {useNavigate  } from "react-router-dom";
 import Cookies from 'js-cookie';
 import { toFormData } from 'axios'
 
 const CampsiteRegistration = () => {
     const navigate  = useNavigate()
-=======
-import {Link, useNavigate  } from "react-router-dom";
-import Cookies from 'js-cookie';
 
-const CampsiteRegistration = () => {
-
-  const navigate  = useNavigate()
->>>>>>> 0ddc5a00865b5ebb08e80b06ced3a48782d7fa23
     const [values, setValues] = useState({
       campsite_name: "",
       location_address:"",
