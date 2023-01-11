@@ -4,8 +4,12 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
+import {useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
+import { toFormData } from 'axios'
 
 const CampsiteRegistration = () => {
+    const navigate  = useNavigate()
     const [values, setValues] = useState({
       campsite_name: "",
       location_address:"",
@@ -181,6 +185,7 @@ const CampsiteRegistration = () => {
           
       })
       const data = await res.json()
+      console.log(data)
       // console.log('====================================');
       // console.log({
       //   campsite_name,
@@ -196,6 +201,10 @@ const CampsiteRegistration = () => {
       }else{
         console.log('Successfull')
         console.log(data);
+
+        Cookies.set('jwt', data.data.token, { expires: 1 });
+        navigate('/', { replace: true });
+       window.location.reload();
 
       }
     };

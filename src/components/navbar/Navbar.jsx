@@ -42,7 +42,7 @@ const Navbar = ({type}) => {
           {user && 
             <>
                 <Link to="/logout"><button className="navButton"><b>Logout</b></button></Link>
-                <Link to="/Roleselector"><button className="navButton"><b>{user['username']}</b></button></Link>
+                <Link to="/Roleselector"><button className="navButton"><b>{user['campsite_name'] ? user['campsite_name'] : user['username']}</b></button></Link>
             </>
           }
           </div>

@@ -2,8 +2,11 @@ import './CampsiteLogin.css'
 import {useState} from 'react'
 import FormInput from '../../../components/formInput/FormInput';
 import NavLogo from '../../../components/navLogo/NavLogo';
+import {useNavigate  } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 const CampsiteLogin = () => {
+  const navigate  = useNavigate()
   const [values, setValues] = useState({
     business_registration_number:"",
     password:"",
@@ -43,6 +46,8 @@ const CampsiteLogin = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
 
+    try{
+
     const { business_registration_number, password } = values
 
       const res = await fetch("http://localhost:5000/api/v1/login_campsite",{
@@ -60,14 +65,16 @@ const CampsiteLogin = () => {
         
     })
     const data = await res.json()
+        if (!res.ok) {
+          throw Error(data['error'])
+        }
+        Cookies.set('jwt', data.data.token, { expires: 1 });
+        navigate('/', { replace: true });
+        window.location.reload();
 
-    if(data.status === 422 || !data){
-      console.log('invalid login');
-    }else{
-      console.log('Successfull')
-      console.log(data);
-
-    }
+      } catch (error) {
+        console.log(error.message);
+      }
   };
 
   return (
@@ -82,10 +89,10 @@ const CampsiteLogin = () => {
               {...input}
               value={values[input.name]}
               onChange={onChange}
-              onClick={handleSubmit}
+              
             />
           ))}
-          <button className='mybutton' >Login</button>
+          <button className='mybutton' onClick={handleSubmit}>Login</button>
         </form>
       </div>
   </div>
