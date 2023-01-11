@@ -4,9 +4,12 @@ import "./CreateEvent.css";
 import DragDrop from "../../components/DragPhoto/dragphoto";
 import EventFormInput from "../../components/CreateEvent/EventFormInput";
 import NavLogo from '../../components/navLogo/NavLogo';
+import { useNavigate } from "react-router-dom";
+
 
 
 const CreateEvent = () => {
+  const navigate = useNavigate()
   const [values, setValues] = useState({
     event_name: "",
     email: "",
@@ -167,8 +170,11 @@ const CreateEvent = () => {
     if(data.status === 422 || !data){
       console.log('invalid registration');
     }else{
-      console.log('Successfull')
-      console.log(data);
+      // console.log('Successfull')
+      // console.log(data);
+      // Cookies.set('jwt', data.data.token, { expires: 1 });
+      navigate('/event', { replace: true });
+      window.location.reload();
 
     }
   };

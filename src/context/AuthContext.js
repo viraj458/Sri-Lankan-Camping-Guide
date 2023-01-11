@@ -65,6 +65,7 @@ export const AuthContextProvider = ({ children }) => {
     const myfn = async()=>{
       const {payload} = await verify(token,'CampKey')
       setUser(payload['user'])
+      console.log(payload['user']);
     }
     if (token !== undefined) myfn()
     else {
