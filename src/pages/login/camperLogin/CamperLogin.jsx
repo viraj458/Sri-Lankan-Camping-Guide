@@ -64,7 +64,9 @@ const CamperLogin = () => {
           
       })
       const data = await res.json()
-        if (!res.ok) throw Error(data['error'])
+      if (!res.ok) {
+        throw Error(data['error'])
+      }
         Cookies.set('jwt', data.data.token, { expires: 1 });
         navigate('/', { replace: true });
         window.location.reload();
