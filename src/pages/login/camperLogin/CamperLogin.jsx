@@ -52,7 +52,6 @@ const CamperLogin = () => {
         const { email, password } = values
         const res = await fetch("http://localhost:5000/api/v1/login",{
         method:"POST",
-        // crossDomain:true,
         headers:{"Content-Type":"application/json"
         },
      

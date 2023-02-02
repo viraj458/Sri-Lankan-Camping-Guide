@@ -3,7 +3,7 @@ import Navbar from "../../components/navbar/Navbar";
 import Header from "../../components/header/Header"
 import SearchItem from "../../components/SearchItems/SearchItem";
 import {useState} from 'react';
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
 
 const List = () => {
@@ -16,7 +16,7 @@ const List = () => {
     reFetch()
   }
 
-  const {data, loading, error, reFetch} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
+  const {data, loading, reFetch} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
 
   return (
     <div>
