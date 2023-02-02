@@ -4,10 +4,8 @@ import "./campsiteRegistration.css"
 import FormInput from '../../components/formInput/FormInput'
 import NavLogo from '../../components/navLogo/NavLogo'
 import DragDrop from "../../components/DragPhoto/dragphoto";
-import {Link } from "react-router-dom"; 
 import {useNavigate  } from "react-router-dom";
 import Cookies from 'js-cookie';
-import { toFormData } from 'axios'
 
 const CampsiteRegistration = () => {
     const navigate  = useNavigate()
@@ -24,8 +22,8 @@ const CampsiteRegistration = () => {
 
       });
 
-      const [ photosOfLocation, setPhotosOfLocation] = useState([]);
-      const [ photosOfLegalDocs, setPhotosOfLegalDocs] = useState([]);
+      const [ photosOfLocation, setPhotosOfLocation ] = useState([]);
+      const [ photosOfLegalDocs, setPhotosOfLegalDocs ] = useState([]);
     
       
 
@@ -167,7 +165,6 @@ const CampsiteRegistration = () => {
         
         const res = await fetch("http://localhost:5000/api/v1/register_campsite",{
         method:"POST",
-        // crossDomain:true,
         headers:{"Content-Type":"application/json"
         },
      
@@ -188,15 +185,6 @@ const CampsiteRegistration = () => {
       })
       const data = await res.json()
       console.log(data)
-      // console.log('====================================');
-      // console.log({
-      //   campsite_name,
-      //   location_address,
-      //   business_registration_number,
-      //   description,
-      //   phone_number,
-      //   password } );
-      // console.log('====================================');
   
       if(data.status === 422 || !data){
         console.log('invalid registration');
@@ -204,11 +192,6 @@ const CampsiteRegistration = () => {
         Cookies.set('jwt',data.data.token,{expires:1});
         navigate('/pkgs',{replace:true});
         window.location.reload();
-
-      //   Cookies.set('jwt', data.data.token, { expires: 1 });
-      //   navigate('/', { replace: true });
-      //  window.location.reload();
-
       }
     };
 
