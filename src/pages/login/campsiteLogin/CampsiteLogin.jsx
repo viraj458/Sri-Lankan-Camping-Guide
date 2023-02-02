@@ -54,7 +54,6 @@ const CampsiteLogin = () => {
 
       const res = await fetch("http://localhost:5000/api/v1/login_campsite",{
       method:"POST",
-      // crossDomain:true,
       headers:{"Content-Type":"application/json"
       },
    

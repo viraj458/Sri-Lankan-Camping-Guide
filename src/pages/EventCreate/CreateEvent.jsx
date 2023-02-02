@@ -144,7 +144,6 @@ const CreateEvent = () => {
 
     const res = await fetch("http://localhost:5000/api/v1/event",{
         method:"POST",
-        // crossDomain:true,
         headers:{"Content-Type":"application/json"
         },
         body:JSON.stringify({ 
@@ -170,9 +169,6 @@ const CreateEvent = () => {
     if(data.status === 422 || !data){
       console.log('invalid registration');
     }else{
-      // console.log('Successfull')
-      // console.log(data);
-      // Cookies.set('jwt', data.data.token, { expires: 1 });
       navigate('/event', { replace: true });
       window.location.reload();
 
