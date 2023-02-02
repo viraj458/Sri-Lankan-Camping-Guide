@@ -1,7 +1,4 @@
 import "./searchItem.css";
-import site3 from "./site3.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar} from "@fortawesome/free-solid-svg-icons";
 import {Link } from "react-router-dom"; 
 
 const SearchItem = ({item}) => {
@@ -13,10 +10,6 @@ const SearchItem = ({item}) => {
         <span className="sItemDetails">{item.description}</span>
         <Link to={`/campsite/${item._id}`}><button className="sItemButton"><b>View</b></button></Link>
       </div>
-      {/* <div className="sItemOther">
-        <FontAwesomeIcon icon={faStar} />
-        <div className="sItemRating">9.5</div>
-      </div> */}
     </div>
   )
 }
