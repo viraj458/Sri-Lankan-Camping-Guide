@@ -25,7 +25,7 @@ const FeatureeventID = () => {
               <span>Starting Time : {data.starting_time}</span>
               <span>Ending Date : {data.ending_date}</span>
               <span>Ending Time : {data.ending_time}</span>
-              <button onClick={() => {alert('You are joined!');}}>Join</button>
+              <button>Join</button>
             </div>
           </div><div className="Pics">
           {data.addphoto?.map((photo1) =>(
