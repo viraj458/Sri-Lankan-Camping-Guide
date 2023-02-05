@@ -19,7 +19,7 @@ import CampsiteRegistration from "./pages/campsiteRegistration/CampsiteRegistrat
 import CampsiteLogin from "./pages/login/campsiteLogin/CampsiteLogin";
 import Contactus from "./pages/Contactus/Contactus";
 import Rule from "./pages/rules/rules";
-import ListAll from "./pages/listAll/ListAll";
+import ListAll from "./pages/listAll/listAll";
 import SitePackage from "./components/SitePackage/SitePackage";
 import Logout from "./components/Logout/Logout";
 
