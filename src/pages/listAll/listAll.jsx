@@ -8,7 +8,7 @@ const ListAll = () => {
 
 
 
-  const {data, loading } = useFetch("http://localhost:5000/api/v1/allcampsites")
+  const {data, loading } = useFetch("https://sri-lankan-campig-guide-api.onrender.com/api/v1/allcampsites")
 
   return (
     <div>
