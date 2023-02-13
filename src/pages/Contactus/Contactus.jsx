@@ -76,45 +76,6 @@ const Contactus = () => {
     
   };
 
-  
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-
-//     const{
-//     contact_name,
-//     contact_email,
-//     subject,
-//     suggesion
-  
-//     } = values
-
-//     const res = await fetch("http://localhost:5000/api/v1/contact",{
-//         method:"POST",
-//         headers:{"Content-Type":"application/json"
-//         },
-//         body:JSON.stringify({ 
-//           contact_name,
-//           contact_email,
-//           subject,
-//           suggesion,
-//           message:text1
-
-
-
-//   })
-
-// })
-// const data = await res.json()
-
-// if(data.status === 422 || !data){
-//   console.log('invalid registration');
-// }else{
-//   console.log('Successfull')
-//   console.log(data);
-
-// }
-// };
 
   return (
     <div className="contactpage"><NavLogo/>

@@ -163,7 +163,7 @@ const CampsiteRegistration = () => {
 
 
         
-        const res = await fetch("http://localhost:5000/api/v1/register_campsite",{
+        const res = await fetch("https://sri-lankan-campig-guide-api.onrender.com/api/v1/register_campsite",{
         method:"POST",
         headers:{"Content-Type":"application/json"
         },

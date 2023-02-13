@@ -13,7 +13,7 @@ import Footer from '../../components/footer/Footer';
 const Campsite = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`http://localhost:5000/api/v1/campsite/find/${id}`);
+  const { data, loading, error } = useFetch(`https://sri-lankan-campig-guide-api.onrender.com/api/v1/campsite/find/${id}`);
 
 
   return (

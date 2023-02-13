@@ -6,7 +6,7 @@ import useFetch from "../../../hooks/useFetch";
 
 const EUfeacture6 = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/v1/events/eventbybirdwatching?eventbirdwatching=Birdwatching",
+    "https://sri-lankan-campig-guide-api.onrender.com/api/v1/events/eventbybirdwatching?eventbirdwatching=Birdwatching",
    { method:"GET"
 });
      console.log(data);

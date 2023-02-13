@@ -6,7 +6,7 @@ import useFetch from "../../hooks/useFetch";
 const FeatureeventID = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
-  const { data, loading, error } = useFetch(`http://localhost:5000/api/v1/event/find/${id}`);
+  const { data, loading, error } = useFetch(`https://sri-lankan-campig-guide-api.onrender.com/api/v1/event/find/${id}`);
 
   return (
     

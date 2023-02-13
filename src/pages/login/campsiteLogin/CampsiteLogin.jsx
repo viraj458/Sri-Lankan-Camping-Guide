@@ -52,7 +52,7 @@ const CampsiteLogin = () => {
 
     const { business_registration_number, password } = values
 
-      const res = await fetch("http://localhost:5000/api/v1/login_campsite",{
+      const res = await fetch("https://sri-lankan-campig-guide-api.onrender.com/api/v1/login_campsite",{
       method:"POST",
       headers:{"Content-Type":"application/json"
       },

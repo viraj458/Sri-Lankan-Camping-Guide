@@ -15,7 +15,7 @@ const Featured = () => {
     
 
   const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/v1/events/countByCategory?category=Adventure,Beach,Jungle,Luxury,River,Birdwatching",
+    "https://sri-lankan-campig-guide-api.onrender.com/api/v1/events/countByCategory?category=Adventure,Beach,Jungle,Luxury,River,Birdwatching",
    { method:"GET"
 });
      console.log(data);

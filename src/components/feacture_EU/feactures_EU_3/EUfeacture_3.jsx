@@ -6,7 +6,7 @@ import React from 'react';
 
 const EUfeacture3 = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/v1/events/eventbyjungle?eventjungle=Jungle",
+    "https://sri-lankan-campig-guide-api.onrender.com/api/v1/events/eventbyjungle?eventjungle=Jungle",
    { method:"GET"
 });
      console.log(data);

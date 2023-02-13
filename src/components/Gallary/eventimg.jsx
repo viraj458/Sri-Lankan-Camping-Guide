@@ -1,11 +1,10 @@
 import "./campimg.css"
-import {useState} from 'react';
 
 import useFetch from "../../hooks/useFetch";
 
 const Eventimg = () => {
   const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/v1/events",
+    "https://sri-lankan-campig-guide-api.onrender.com/api/v1/events",
    { method:"GET"
 });
      console.log(data);

@@ -1,5 +1,4 @@
 import "./campimg.css"
-import {useState} from 'react';
 
 import useFetch from "../../hooks/useFetch";
 
@@ -7,7 +6,7 @@ import useFetch from "../../hooks/useFetch";
 const Campimg = () => {
 
   const { data, loading, error } = useFetch(
-    "http://localhost:5000/api/v1/allcampsites",
+    "https://sri-lankan-campig-guide-api.onrender.com/api/v1/allcampsites",
    { method:"GET"
 });
      console.log(data);

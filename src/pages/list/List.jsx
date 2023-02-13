@@ -16,7 +16,7 @@ const List = () => {
     reFetch()
   }
 
-  const {data, loading, reFetch} = useFetch(`http://localhost:5000/api/v1/campsites?nearest_city=${destination}`)
+  const {data, loading, reFetch} = useFetch(`https://sri-lankan-campig-guide-api.onrender.com/api/v1/campsites?nearest_city=${destination}`)
 
   return (
     <div>

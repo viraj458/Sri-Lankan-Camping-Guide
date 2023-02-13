@@ -142,7 +142,7 @@ const CreateEvent = () => {
     ending_date,
     ending_time} = values
 
-    const res = await fetch("http://localhost:5000/api/v1/event",{
+    const res = await fetch("https://sri-lankan-campig-guide-api.onrender.com/api/v1/event",{
         method:"POST",
         headers:{"Content-Type":"application/json"
         },
